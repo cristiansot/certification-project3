@@ -9,7 +9,7 @@ YupPassword(Yup)
 const schema = Yup.object({
   newUserName: Yup.string().required('Required'),
   newUserPassword: Yup.string().password().required('Required'),
-  confirmNewUserPassword: Yup.string().required('Required'),
+  confirmNewUserPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match')
 });
 
 const SignIn = ({ getData }) => {
