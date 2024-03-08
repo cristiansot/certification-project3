@@ -10,6 +10,7 @@ import './assets/css/app.css'
  */
 import NavBar from './components/NavBar'
 import Login from './components/Login'
+import SignIn from './components/SignIn'
 import Home from './components/Home'
 import About from './components/About'
 
@@ -18,6 +19,7 @@ const App = () => {
    <div>
     <NavBar />
     <Login />
+    <SignIn />
     <h1 className='mainTitle'>Quiz<br></br>Game</h1>
    </div>
   );

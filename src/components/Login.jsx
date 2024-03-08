@@ -8,6 +8,8 @@ const schema = Yup.object({
   userPassword: Yup.number().required('Required'),
 });
 
+
+
 const login = ({ getData }) => {
 
   const send = (values, { resetForm }) => {
@@ -40,10 +42,10 @@ const login = ({ getData }) => {
         <div className='contentInputsLogin'>
         <h1>Login</h1>
           <input className='inputUserName' type="text" placeholder='Name' name='userName' value={values.userName} onChange={handleChange} />
-          <input className='inputUserPassword' type="number" placeholder='Password' name='userPassword' value={values.userPassword} onChange={handleChange} />
-          <button className='btn' type='submit'>Login</button>
-          <div>{errors.userName && <span>{errorsuserName}</span>}</div>
+          <div>{errors.userName && <span>{errors.userName}</span>}</div>
+          <input className='inputUserPassword' type="text" placeholder='Password' name='userPassword' value={values.userPassword} onChange={handleChange} />
           <div>{errors.userPassword && <span>{errors.userPassword}</span>}</div>
+          <button className='btn' type='submit'>Login</button>
         </div> 
       </form>
     </div>
