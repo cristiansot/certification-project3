@@ -1,0 +1,21 @@
+.wrapperLogin {
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+
+form {
+  background-color: #FFF;
+  padding: 2rem;
+}
+
+input {
+  margin: 0.5rem;
+}
+.contentInputsLogin {
+  display: flex;
+  flex-direction: column;
+  font-family: "Vollkorn", italic;
+  justify-content: center;
+  align-items: center;
+}

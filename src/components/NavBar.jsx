@@ -5,8 +5,8 @@ const NavBar = () => {
 
   return (
     <div className='contentNavBarBtns'>
-      <button className='loginBtn' type='login' onclick="function()">Login</button>
-      <button className='signInBtn' type='signIn' onclick="function()">Sign In</button>
+      <button className='loginBtn' type='login' onClick="function()">Login</button>
+      <button className='signInBtn' type='signIn' onClick="function()">Sign In</button>
     </div>
   );
 };

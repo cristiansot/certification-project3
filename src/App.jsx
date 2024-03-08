@@ -9,6 +9,7 @@ import './assets/css/app.css'
  * Importing other components
  */
 import NavBar from './components/NavBar'
+import Login from './components/Login'
 import Home from './components/Home'
 import About from './components/About'
 
@@ -16,6 +17,7 @@ const App = () => {
   return (
    <div>
     <NavBar />
+    <Login />
     <h1 className='mainTitle'>Quiz<br></br>Game</h1>
    </div>
   );
