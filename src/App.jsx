@@ -4,7 +4,7 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-
+import './assets/css/app.css'
 /**
  * Importing other components
  */
@@ -14,7 +14,10 @@ import About from './components/About'
 
 const App = () => {
   return (
-   <NavBar />
+   <div>
+    <NavBar />
+    <h1 className='mainTitle'>Quiz<br></br>Game</h1>
+   </div>
   );
 }
 

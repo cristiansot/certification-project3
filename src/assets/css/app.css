@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+
+body {
+  background-color: #ffe600;
+}
+
+.mainTitle {
+  display: flex;
+  font-family: "Vollkorn", italic;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-size: 19rem;
+  align-items: center;
+  justify-content: center;
+  line-height: 18rem;
+  margin-top: 10rem;
+}
