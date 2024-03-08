@@ -1,49 +1,45 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import '../assets/css/signIn.css'
+import YupPassword from 'yup-password'
+import '../assets/css/login.css'
+
+YupPassword(Yup)
 
 const schema = Yup.object({
   newUserName: Yup.string().required('Required'),
-  newUserPassword: Yup.number().required('Required'),
+  newUserPassword: Yup.string().password().required('Required'),
+  confirmNewUserPassword: Yup.string().required('Required'),
 });
 
 const SignIn = ({ getData }) => {
 
   const send = (values, { resetForm }) => {
 
-  //   axios.post('http://localhost:3001/currency', values)
-  //   .then(function (response) {
-  //     // console.log(response);
-  //     alert('Currency Added Successfully');
-  //     getData(values);
-  //     console.log(response);
-  //     resetForm(); 
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   })
   };
   
   const { handleSubmit, handleChange, errors, values } = useFormik({
     initialValues: {
       newUserName: '',
       newUserPassword: '',
+      confirmNewUserPassword: ''
     },
     validationSchema: schema,
     onSubmit: send,
   });
 
   return (
-    <div className='wrapperSignIn'>
+    <div className='wrapperLogin'>
       <form onSubmit={handleSubmit}>
-        <div className='contentInputsSignIn'>
+        <div className='contentInputsLogin'>
         <h1>Sign in</h1>
-          <input className='inputNewUserName' type="text" placeholder='Enter your Name' name='NewUserName' value={values.newUserName} onChange={handleChange} />
+          <input className='inputUserName' type="text" placeholder='Name' name='newUserName' value={values.newUserName} onChange={handleChange} />
           <div>{errors.newUserName && <span>{errors.newUserName}</span>}</div>
-          <input className='inputNewUserPassword' type="text" placeholder='Password' name='userPassword' value={values.newUserPassword} onChange={handleChange} />
+          <input className='inputUserPassword' type="text" placeholder='Password' name='newUserPassword' value={values.newUserPassword} onChange={handleChange} />
           <div>{errors.newUserPassword && <span>{errors.newUserPassword}</span>}</div>
-          <button className='btn' type='submit'>Login</button>  
+          <input className='inputConfirmUserPassword' type="text" placeholder='Confirm Password' name='confirmNewUserPassword' value={values.confirmNewUserPassword} onChange={handleChange} />
+          <div>{errors.nconfirmNewUserPassword && <span>{errors.confirmNewUserPassword}</span>}</div>
+          <button className='btn' type='submit'>Sign in</button>
         </div> 
       </form>
     </div>

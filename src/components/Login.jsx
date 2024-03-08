@@ -3,28 +3,16 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import '../assets/css/login.css'
 
+
 const schema = Yup.object({
   userName: Yup.string().required('Required'),
-  userPassword: Yup.number().required('Required'),
+  userPassword: Yup.string().required('Required'),
 });
-
-
 
 const login = ({ getData }) => {
 
   const send = (values, { resetForm }) => {
 
-  //   axios.post('http://localhost:3001/currency', values)
-  //   .then(function (response) {
-  //     // console.log(response);
-  //     alert('Currency Added Successfully');
-  //     getData(values);
-  //     console.log(response);
-  //     resetForm(); 
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   })
   };
   
   const { handleSubmit, handleChange, errors, values } = useFormik({
