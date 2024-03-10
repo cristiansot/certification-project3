@@ -1,35 +1,47 @@
 .contentNavBarBtns {
-    display: flex;
-    /* justify-content: end; */
-    width: 100%;
-    height: 4rem;
-    background-color: antiquewhite;
-    padding: 1rem;
-    position: sticky;
+  display: flex;
+  width: 100% !important;
+  /* justify-content: space-between;   */
+  align-items: flex-start;
+  /* width: 100%; */
+  /* height: auto; */
+  background-color: antiquewhite;
+  padding: 1rem;
+  /* position: sticky; */
 }
 
 .homeBtn {
-    display: flex;
-    justify-content: flex-start;
+  /* display: flex;  */
+  width: 100px !important;
+  cursor: pointer;
+}
+
+.loginNadSignInBtns {
+  display: flex;
+  justify-content: end ;
 }
 
 .loginBtn {
-    width: 10rem;
-    border-radius: 30px;
-    border: none;
-    justify-content: end;
-    background-color: cornflowerblue;
-    color: white;
-    margin-right: 1rem;
+  width: 10rem;
+  height: 2rem;
+  border-radius: 30px;
+  border: none;
+  justify-content: end;
+  background-color: cornflowerblue;
+  color: white;
+  margin-right: 1rem;
+  cursor: pointer;
 }
 
 .signInBtn {
-    width: 10rem;
-    border-radius: 30px;
-    border: none;
-    justify-content: end;
-    background-color: cornflowerblue;
-    color: white;
-    margin-right: 1rem;
+  width: 10rem;
+  height: 2rem;
+  border-radius: 30px;
+  border: none;
+  justify-content: end;
+  background-color: cornflowerblue;
+  color: white;
+  margin-right: 1rem;
+  cursor: pointer;
 }
 

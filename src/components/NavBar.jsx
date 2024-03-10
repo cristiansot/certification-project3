@@ -7,6 +7,10 @@ import '../assets/css/navBar.css';
 
 const NavBar = () => {
 
+  /** In this button I need a condition, 
+  * if the user is registered they must go to the section
+  * where the quizzes are shown, if they are not logged in,
+  * they must go to the home */
   const handleHomeClick = () => {
     window.location.href = "/home";
   };
@@ -26,15 +30,17 @@ const NavBar = () => {
           Home
         </button>
 
-        <button className='loginBtn' onClick={handleLoginClick}>
-          <Link to="/login">Login</Link>
-        </button>
+        <div className='loginNadSignInBtns'>
+          <button className='loginBtn' onClick={handleLoginClick}>
+            <Link to="/login">Login</Link>
+          </button>
 
-        <button className='signInBtn' onClick={handleSignInClick}>
-          <Link to="/signIn">Sign in</Link>
-        </button>
+          <button className='signInBtn' onClick={handleSignInClick}>
+            <Link to="/signIn">Sign in</Link>
+          </button>
+        </div>
       </div>
-     
+        
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
