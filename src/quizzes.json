@@ -1,0 +1,50 @@
+{
+  "quizOne": [
+    {
+      "id": 1,
+      "title": "Title one",
+      "value": [5],
+      "options": [
+        { "textAnswer": "Answer 1", "isCorrect": true },
+        { "textAnswer": "Answer 2", "isCorrect": false },
+        { "textAnswer": "Answer 3", "isCorrect": false },
+        { "textAnswer": "Answer 4", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Title two",
+      "value": [5],
+      "options": [
+        { "textAnswer": "Answer 1", "isCorrect": true },
+        { "textAnswer": "Answer 2", "isCorrect": false },
+        { "textAnswer": "Answer 3", "isCorrect": false },
+        { "textAnswer": "Answer 4", "isCorrect": false }
+      ]
+    }
+  ],
+  "quizTwo": [
+    {
+      "id": 1,
+      "title": "Title three",
+      "value": [5],
+      "options": [
+        { "textAnswer": "Answer 1", "isCorrect": true },
+        { "textAnswer": "Answer 2", "isCorrect": false },
+        { "textAnswer": "Answer 3", "isCorrect": false },
+        { "textAnswer": "Answer 4", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Title four",
+      "value": [5],
+      "options": [
+        { "textAnswer": "Answer 1", "isCorrect": true },
+        { "textAnswer": "Answer 2", "isCorrect": false },
+        { "textAnswer": "Answer 3", "isCorrect": false },
+        { "textAnswer": "Answer 4", "isCorrect": false }
+      ]
+    }
+  ]
+}
