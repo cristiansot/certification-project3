@@ -1,6 +1,6 @@
 import React from 'react';
+import quizzes from '../quizzes.json'
 
-// This section will be two components in one
 
 // Create a button component that has the title as a prop, this will be the question that will read from the database
 
@@ -9,14 +9,15 @@ import React from 'react';
 //I need a function that, once the quiz is created, diplay the new button on the screen
 
 
-const SelectQuizButtons = () => {
+const Quizzes = () => {
   
-  return (
-    <div className='wrapperBtns'>
-      <button>Quiz 1</button>
-      <button>Quiz 2</button>
-    </div>
-  );
-};
+    return (
+      <div className='wrapperBtns'>
+        {Object.keys(quizzes).map(quizName => (
+          <button>{quizName}</button>
+        ))}
+      </div>
+    );
+  };
 
-export default SelectQuizButtons;
+export default Quizzes;

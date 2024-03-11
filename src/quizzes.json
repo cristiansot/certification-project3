@@ -1,5 +1,5 @@
 {
-  "quizOne": [
+  "Quiz One": [
     {
       "id": 1,
       "title": "Title one",
@@ -23,9 +23,9 @@
       ]
     }
   ],
-  "quizTwo": [
+  "Quiz Two": [
     {
-      "id": 1,
+      "id": 3,
       "title": "Title three",
       "value": [5],
       "options": [
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 4,
       "title": "Title four",
       "value": [5],
       "options": [

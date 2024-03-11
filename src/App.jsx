@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './components/NavBar';
 // import Home from './components/Home'
+import Quizzes from './components/Quizzes'
 import './assets/css/app.css';
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
     <div>
       <NavBar />
       {/* <Home /> */}
+      <Quizzes/>
     </div>
   );
 };
