@@ -1,47 +1,57 @@
 {
   "quizzes": [
     {
-      "id": 1,
-      "title": "Title One",
-      "value": [5],
-      "options": [
-        { "textAnswer": "Answer 1", "isCorrect": true },
-        { "textAnswer": "Answer 2", "isCorrect": false },
-        { "textAnswer": "Answer 3", "isCorrect": false },
-        { "textAnswer": "Answer 4", "isCorrect": false }
+      "quiz_group": "Group One",
+      "quizzes": [
+        {
+          "id": 1,
+          "title": "Title One",
+          "value": [5],
+          "options": [
+            { "textAnswer": "Answer 1", "isCorrect": true },
+            { "textAnswer": "Answer 2", "isCorrect": false },
+            { "textAnswer": "Answer 3", "isCorrect": false },
+            { "textAnswer": "Answer 4", "isCorrect": false }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Title Two",
+          "value": [10],
+          "options": [
+            { "textAnswer": "Answer A", "isCorrect": true },
+            { "textAnswer": "Answer B", "isCorrect": false },
+            { "textAnswer": "Answer C", "isCorrect": false },
+            { "textAnswer": "Answer D", "isCorrect": false }
+          ]
+        }
       ]
     },
     {
-      "id": 2,
-      "title": "Title Two",
-      "value": [10],
-      "options": [
-        { "textAnswer": "Answer A", "isCorrect": true },
-        { "textAnswer": "Answer B", "isCorrect": false },
-        { "textAnswer": "Answer C", "isCorrect": false },
-        { "textAnswer": "Answer D", "isCorrect": false }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "Title Three",
-      "value": [8],
-      "options": [
-        { "textAnswer": "Answer X", "isCorrect": true },
-        { "textAnswer": "Answer Y", "isCorrect": false },
-        { "textAnswer": "Answer Z", "isCorrect": false },
-        { "textAnswer": "Answer W", "isCorrect": false }
-      ]
-    },
-    {
-      "id": 4,
-      "title": "Title Four",
-      "value": [7],
-      "options": [
-        { "textAnswer": "Answer Alpha", "isCorrect": true },
-        { "textAnswer": "Answer Beta", "isCorrect": false },
-        { "textAnswer": "Answer Gamma", "isCorrect": false },
-        { "textAnswer": "Answer Delta", "isCorrect": false }
+      "quiz_group": "Group Two",
+      "quizzes": [
+        {
+          "id": 3,
+          "title": "Title Three",
+          "value": [8],
+          "options": [
+            { "textAnswer": "Answer X", "isCorrect": true },
+            { "textAnswer": "Answer Y", "isCorrect": false },
+            { "textAnswer": "Answer Z", "isCorrect": false },
+            { "textAnswer": "Answer W", "isCorrect": false }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Title Four",
+          "value": [7],
+          "options": [
+            { "textAnswer": "Answer Alpha", "isCorrect": true },
+            { "textAnswer": "Answer Beta", "isCorrect": false },
+            { "textAnswer": "Answer Gamma", "isCorrect": false },
+            { "textAnswer": "Answer Delta", "isCorrect": false }
+          ]
+        }
       ]
     }
   ]
