@@ -1,5 +1,10 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import quizzes from '../quizzes.json'
+
+const [score, setScore] = useState();
+const [currentQuestion, setCurrentQuestion] = useState();
+const [gameIsOver, setGameIsOver] = useState(false);
 
 const QuizGame = () => {
   
