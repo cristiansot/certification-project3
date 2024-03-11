@@ -1,5 +1,5 @@
 import React from 'react';
-import quizzes from '../quizzes.json'
+import quizzes from '../quizzes.json';
 
 
 // Create a button component that has the title as a prop, this will be the question that will read from the database
@@ -10,14 +10,16 @@ import quizzes from '../quizzes.json'
 
 
 const Quizzes = () => {
-  
     return (
-      <div className='wrapperBtns'>
-        {Object.keys(quizzes).map(quizName => (
-          <button>{quizName}</button>
-        ))}
-      </div>
+        <div className='wrapperBtns'>
+            {quizzes.quizzes.map((quizGroup) => (
+                <button key={quizGroup.quizGroup}>{quizGroup.quizGroup}</button>
+            ))}
+        </div>
     );
-  };
+};
 
 export default Quizzes;
+
+
+

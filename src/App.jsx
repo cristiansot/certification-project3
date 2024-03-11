@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './components/NavBar';
 import Quizzes from './components/Quizzes'
-import QuizGame from './components/QuizGame'
+// import QuizGame from './components/QuizGame'
 import './assets/css/app.css';
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <NavBar />
       <Quizzes/>
-      <QuizGame />
+      {/* <QuizGame /> */}
     </div>
   );
 };

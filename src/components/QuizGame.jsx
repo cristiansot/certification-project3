@@ -13,10 +13,9 @@ const QuizGame = () => {
         <div><h1>Quiz Title</h1></div>
         <div><h2>{currentQuestion + 1}</h2></div>
         <div className="answers">
-          <button className="answerBtn">Option 1</button>
-          <button className="answerBtn">Option 2</button>
-          <button className="answerBtn">Option 3</button>
-          <button className="answerBtn">Option 4</button>
+          {quiz[currentQuestion].options.map((answer) => (
+            <button> {answer.textAnswer} </button>
+          ))}
         </div>
       </div>
     );
