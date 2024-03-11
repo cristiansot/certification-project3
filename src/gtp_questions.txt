@@ -3,3 +3,4 @@ https://chat.openai.com/share/ed260f05-fe20-4f43-8cd1-0d3b62c80e01
 
 I asked why .map did not works in my new json structure
 https://chat.openai.com/share/16f2a90f-4bbf-498a-87c0-9e8484e2109f
+

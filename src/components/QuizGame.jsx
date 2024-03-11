@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import quizzes from '../quizzes.json'
+import quiz from '../../data/quiz.json' 
 
 const QuizGame = () => {
 
