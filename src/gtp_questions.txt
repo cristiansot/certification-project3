@@ -1,0 +1,3 @@
+I asked how to structure the JSON file
+https://chat.openai.com/share/ed260f05-fe20-4f43-8cd1-0d3b62c80e01
+
