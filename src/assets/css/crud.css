@@ -1,0 +1,21 @@
+.containerCrud {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1em;
+}
+
+.playBtn {
+    width: 5em;
+    margin-left: 1em;
+}
+
+.editBtn {
+    width: 5em;
+    margin-left: 1em;
+}
+
+.deleteBtn {
+    width: 5em;
+    margin-left: 1em;
+}

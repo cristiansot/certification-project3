@@ -1,4 +1,5 @@
 import React from 'react';
+import Crud from './Crud'
 import quiz from '../../data/quiz.json'
 
 
@@ -12,8 +13,11 @@ import quiz from '../../data/quiz.json'
 const Quizzes = () => {
     return (
         <div className='wrapperBtns'>
-            {quiz.map((quizName) => (
-                <button key={quizName.name}>{quizName.name}</button>
+            {quiz.map(quiz => (
+               <Crud 
+                key={quiz.id}
+                name={quiz.name}
+               />
             ))}
         </div>
     );
