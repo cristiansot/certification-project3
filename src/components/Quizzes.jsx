@@ -13,7 +13,9 @@ const Quizzes = () => {
         {quiz.map(quiz => (
           <Crud 
           key={quiz.id}
+          id={quiz.id}
           name={quiz.name}
+          question={quiz.question}
           />
         ))}
     </div>
