@@ -1,0 +1,10 @@
+.contentBtn {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.createBtn {
+    width: 10em;
+    height: 3em;
+}
