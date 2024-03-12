@@ -19,17 +19,4 @@ const Quizzes = () => {
     );
 };
 
-// const Quizzes = () => {
-//     return (
-//         <div className='wrapperBtns'>
-//             {quizzes.quizzes.map((quizGroup) => (
-//                 <button key={quizGroup.quizGroup}>{quizGroup.quizGroup}</button>
-//             ))}
-//         </div>
-//     );
-// };
-
 export default Quizzes;
-
-
-
