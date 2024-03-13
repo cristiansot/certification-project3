@@ -1,19 +1,18 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import '../assets/css/navBar.css';
 
-const NavBar = ({ sendLogin, sendSignIn, sendHome}) => {
+const NavBar = () => {
 
   const handleHomeClick = () => {
-   sendHome(window.location.href = "/home");
+    window.location.href = "/home";
   };
 
   const handleLoginClick = () => {
-    sendLogin(window.location.href = "/login");
+    window.location.href = "/login";
   };
 
   const handleSignInClick = () => {
-    sendSignIn(window.location.href = "/sign-in");
+    window.location.href = "/sign-in";
   };
 
   return (
@@ -24,7 +23,6 @@ const NavBar = ({ sendLogin, sendSignIn, sendHome}) => {
         </button>
       </div>
     
-
       <div className='loginNadSignInBtns'>
         <button className='loginBtn' onClick={handleLoginClick}>
           Login

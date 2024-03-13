@@ -1,19 +1,15 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
-const Home = ({ sendQuiz }) => {
-
-  const handleClick = () => {
-    sendQuiz(window.location.href = "/quizzes");
-  }
-
+const Home = () => {
   return (
     <div>
       <h1 className='mainTitle'>Quiz<br />Game</h1>
       <div className="quizPlayContent"> 
-       <button className="quizPlayBtn" onClick={handleClick}>Play</button> 
+        <Link to="/quizzes" className="quizPlayBtn">Play Quizzes</Link>
       </div>
     </div>
   );
 };
 
-export default Home
+export default Home;

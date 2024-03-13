@@ -28,9 +28,14 @@ body {
 }
 
 .quizPlayBtn {
-  width: 4em;
-  height: 2em;
-  font-size: 3em;
+  display: flex;
+  color: black;
+  text-decoration: none;
+  width: 7em;
+  height: 1.7em;
+  font-size: 2em;
+  align-items: center;
+  justify-content: center;
   border-radius: 0.6em;
   cursor: pointer;
   background-color: #ffffff;
