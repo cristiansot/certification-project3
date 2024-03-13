@@ -17,7 +17,7 @@ const NavBar = () => {
 
   return (
     <div className='contentNavBarBtns'>
-      <div>
+      <div className='contentHomeBtn'>
         <button className='homeBtn' onClick={handleHomeClick}>
           Home
         </button>

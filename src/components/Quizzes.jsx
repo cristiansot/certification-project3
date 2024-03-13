@@ -15,7 +15,6 @@ const Quizzes = () => {
           key={quiz.id}
           id={quiz.id}
           name={quiz.name}
-          question={quiz.question}
           />
         ))}
     </div>

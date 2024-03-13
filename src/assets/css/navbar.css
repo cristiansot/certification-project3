@@ -1,28 +1,23 @@
 .contentNavBarBtns {
   display: flex;
-  width: 100% !important;
-  /* justify-content: space-between;   */
-  align-items: flex-start;
-  /* width: 100%; */
-  /* height: auto; */
+  flex-direction: row;
+  justify-content: space-between;
   background-color: antiquewhite;
   padding: 1rem;
-  /* position: sticky; */
 }
 
-.homeBtn {
-  /* display: flex;  */
-  width: 100px !important;
-  cursor: pointer;
+.contentHomeBtn {
+  display: flex;
 }
 
 .loginNadSignInBtns {
   display: flex;
-  justify-content: end ;
-}
 
-.loginBtn {
-  width: 10rem;
+}
+.homeBtn,
+.loginBtn,
+.signInBtn  {
+  width: 8rem;
   height: 2rem;
   border-radius: 30px;
   border: none;
@@ -32,16 +27,3 @@
   margin-right: 1rem;
   cursor: pointer;
 }
-
-.signInBtn {
-  width: 10rem;
-  height: 2rem;
-  border-radius: 30px;
-  border: none;
-  justify-content: end;
-  background-color: cornflowerblue;
-  color: white;
-  margin-right: 1rem;
-  cursor: pointer;
-}
-
