@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
@@ -9,6 +9,7 @@ import SignIn from './components/SignIn';
 import './assets/css/app.css';
 
 const App = () => {
+
   return (
     <Router>
       <div>
@@ -17,7 +18,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/quizzes" element={<Quizzes />} />
-          <Route path="/game" element={<QuizGame />} />
+          <Route path="/quizGame/:id" element={<QuizGame />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-in" element={<SignIn />} />
         </Routes>

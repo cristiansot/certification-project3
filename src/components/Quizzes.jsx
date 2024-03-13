@@ -1,9 +1,11 @@
 import React from 'react';
 import Crud from './Crud'
+import { useState } from 'react';
 import quiz from '../../data/quiz.json'
 import '../assets/css/quizzes.css'
 
 const Quizzes = () => {
+  
   return (
     <>
     <div className='contentBtn'>
