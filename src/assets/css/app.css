@@ -20,3 +20,18 @@ body {
   margin-bottom: 2rem;
   text-align: center;
 }
+
+.quizPlayContent {
+  display: flex;
+  justify-content: center !important;
+  
+}
+
+.quizPlayBtn {
+  width: 4em;
+  height: 2em;
+  font-size: 3em;
+  border-radius: 0.6em;
+  cursor: pointer;
+  background-color: #ffffff;
+}

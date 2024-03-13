@@ -1,52 +1,41 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Login from '../components/Login';
-import SignIn from '../components/SignIn';
-import Home from '../components/Home';
+// import { Link } from 'react-router-dom';
 import '../assets/css/navBar.css';
 
-const NavBar = () => {
+const NavBar = ({ sendLogin, sendSignIn, sendHome}) => {
 
-  /** In this button I need a condition, 
-  * if the user is registered they must go to the section
-  * where the quizzes are shown, if they are not logged in,
-  * they must go to the home */
   const handleHomeClick = () => {
-    window.location.href = "/home";
+   sendHome(window.location.href = "/home");
   };
 
   const handleLoginClick = () => {
-    window.location.href = "/login";
+    sendLogin(window.location.href = "/login");
   };
 
   const handleSignInClick = () => {
-    window.location.href = "/signin";
+    sendSignIn(window.location.href = "/sign-in");
   };
 
   return (
-    <Router>
-      <div className='contentNavBarBtns'>
+    <div className='contentNavBarBtns'>
+      <div>
         <button className='homeBtn' onClick={handleHomeClick}>
           Home
         </button>
-
-        <div className='loginNadSignInBtns'>
-          <button className='loginBtn' onClick={handleLoginClick}>
-            <Link to="/login">Login</Link>
-          </button>
-
-          <button className='signInBtn' onClick={handleSignInClick}>
-            <Link to="/signIn">Sign in</Link>
-          </button>
-        </div>
       </div>
-        
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signIn" element={<SignIn />} />
-      </Routes>
-    </Router>
+    
+
+      <div className='loginNadSignInBtns'>
+        <button className='loginBtn' onClick={handleLoginClick}>
+          Login
+        </button>
+   
+        <button className='signInBtn' onClick={handleSignInClick}>
+         Sign in
+        </button>       
+      </div>
+      
+    </div>
   );
 };
 

@@ -16,7 +16,7 @@ const Crud = ({ id, name, question }) => {
       <div className="containerCrud">
         <h1>{name}</h1>
         <button className="playBtn" id={id} onClick={handleClick}>Play</button>
-        <button className="editBtn" id={id}>Edit</button>
+        <button className="editBtn" id={id} >Edit</button>
         <button className="deleteBtn" id={id}>Delete</button>
      </div>
 
