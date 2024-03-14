@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import quiz from '../../data/quiz.json';
 import '../assets/css/quizGame.css'
@@ -6,7 +7,7 @@ import '../assets/css/quizGame.css'
 const QuizGame = () => {
 
   // const [score, setScore] = useState(0);
-  // const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   // const [gameIsOver, setGameIsOver] = useState(false);
 
   const { id } = useParams();//This is a text strings
@@ -16,18 +17,17 @@ const QuizGame = () => {
 
   const findQuiz = quiz.find((e) => e.id === quizId);
   console.log(findQuiz)
-  
+
   return (
     <div className="quizGameWrapper">
       <div>
         <h1 className="quizName">{findQuiz.name}</h1>
       </div>
-
+      <div><h2>{findQuiz.question}</h2></div>
       <div>
-        <h2 className="quizName">{findQuiz.question}</h2>
+        <span>Question {currentQuestion + 1} of</span> {findQuiz.questions.lenght}
       </div>
-     
-      <h2></h2>
+
     </div>
   );
 };
