@@ -11,6 +11,8 @@
 }
 
 .answerBtn {
+  padding-left: 1em;
+  padding-right: 1em;
   font-family: "Vollkorn";
   font-weight: 100;
   border: none;

@@ -6,7 +6,7 @@ import '../assets/css/quizGame.css'
 
 const QuizGame = () => {
 
-  // const [score, setScore] = useState(0);
+  const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   // const [gameIsOver, setGameIsOver] = useState(false);
 
@@ -17,6 +17,10 @@ const QuizGame = () => {
 
   const { questions } = findQuiz;
   console.log(questions);
+
+  function HandlerAnswer(isCorrect, e) {
+    if(isCorrect) setScore(score + 5);
+  }
 
   return (
     <div className="quizGameWrapper">
@@ -34,7 +38,11 @@ const QuizGame = () => {
      
       <div>
         {questions[currentQuestion].options.map((answer) => (
-          <button className="answerBtn">{answer.textAnswer}</button>
+          <button
+            key={answer.textAnswer} className="answerBtn"
+            onClick={(e) => HandlerAnswer(answer.isCorrect, e)}>
+              {answer.textAnswer}
+          </button>
         ))}
       </div>
 
