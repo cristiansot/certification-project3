@@ -10,33 +10,36 @@ const QuizGame = () => {
   // const [gameIsOver, setGameIsOver] = useState(false);
 
   const { id } = useParams();//This is a text strings  
+  console.log(id);
+
   const quizId = parseInt(id);//I had to transform into a number
-  const findQuiz = quizzes.find((e) => e.id === quizId);
-  console.log(findQuiz)
+  console.log(quizId);
+  // const findQuiz = quizzes.find((e) => e.id === quizId);
+  // console.log(findQuiz)
 
-  const { questions } = findQuiz;
-  console.log(questions);
+  // const { questions } = findQuiz;
+  // console.log(questions);
 
-  function HandlerAnswer(isCorrect, e) {
-    if(isCorrect) setScore(score + 5);
-    e.target.classList.add(isCorrect ? "correct" : "incorrect")
-  }
+  // function HandlerAnswer(isCorrect, e) {
+  //   if(isCorrect) setScore(score + 5);
+  //   e.target.classList.add(isCorrect ? "correct" : "incorrect")
+  // }
 
   return (
     <div className="quizGameWrapper">
       <div>
-        <h1 className="quizName">{findQuiz.name}</h1>
+        {/* <h1 className="quizName">{findQuiz.name}</h1> */}
       </div>
 
       <div>
-        <span>Question {currentQuestion + 1} of</span> {questions.lenght}
+        {/* <span>Question {currentQuestion + 1} of</span> {questions.lenght} */}
       </div>
 
       <div>
-        <h2>{questions[currentQuestion].question}</h2>
+        {/* <h2>{questions[currentQuestion].question}</h2> */}
       </div>
      
-      <div>
+      {/* <div>
         {questions[currentQuestion].options.map((answer) => (
           <button
             key={answer.textAnswer} className="answerBtn"
@@ -44,7 +47,7 @@ const QuizGame = () => {
               {answer.textAnswer}
           </button>
         ))}
-      </div>
+      </div> */}
 
     </div>
   );

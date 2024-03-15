@@ -71,7 +71,6 @@ const App = () => {
 
   const [data, setData] = useState(quizzes);
   
-
   return (
     <Router>
       <div>
