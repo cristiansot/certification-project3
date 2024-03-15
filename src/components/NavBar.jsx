@@ -1,36 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/css/navBar.css';
 
 const NavBar = () => {
 
-  const handleHomeClick = () => {
-    window.location.href = "/home";
-  };
-
-  const handleLoginClick = () => {
-    window.location.href = "/login";
-  };
-
-  const handleSignInClick = () => {
-    window.location.href = "/sign-in";
-  };
-
   return (
     <div className='contentNavBarBtns'>
       <div className='contentHomeBtn'>
-        <button className='homeBtn' onClick={handleHomeClick}>
-          Home
-        </button>
+        <Link to={"/home"}>
+          <button className='homeBtn'>Home</button>
+        </Link>
       </div>
     
       <div className='loginNadSignInBtns'>
-        <button className='loginBtn' onClick={handleLoginClick}>
-          Login
-        </button>
-   
-        <button className='signInBtn' onClick={handleSignInClick}>
-         Sign in
-        </button>       
+        <Link to={"/login"}>
+          <button className='loginBtn'>Login</button>
+        </Link>
+
+        <Link to={"/sign-in"}>
+          <button className='signInBtn'>Sign in</button>
+        </Link>    
       </div>
       
     </div>

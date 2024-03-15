@@ -10,6 +10,10 @@
   font-size: 3em;
 }
 
+.correct {
+  background-color: greenyellow;
+}
+
 .answerBtn {
   padding-left: 1em;
   padding-right: 1em;

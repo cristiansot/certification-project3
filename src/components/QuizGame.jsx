@@ -20,6 +20,7 @@ const QuizGame = () => {
 
   function HandlerAnswer(isCorrect, e) {
     if(isCorrect) setScore(score + 5);
+    e.target.classList.add(isCorrect ? "correct" : "incorrect")
   }
 
   return (
