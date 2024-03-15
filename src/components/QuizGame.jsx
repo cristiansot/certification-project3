@@ -32,7 +32,7 @@ const QuizGame = ({ quizzes }) => {
       </div>
 
       <div>
-        <span>Question {currentQuestion + 1} of</span> {questions.lenght}
+        <span>Question {currentQuestion + 1} of</span> {questions.length}
       </div>
 
       <div>
