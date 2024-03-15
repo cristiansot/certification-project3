@@ -10,8 +10,14 @@
   font-size: 3em;
 }
 
-.correct {
-  background-color: greenyellow;
+.correct,
+.correct:hover {
+  background-color: rgb(57, 235, 101);
+}
+
+.incorrect,
+.incorrect:hover {
+  background-color: rgb(255, 25, 0);
 }
 
 .answerBtn {

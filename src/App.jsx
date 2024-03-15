@@ -8,7 +8,7 @@ import Login from './components/Login';
 import SignIn from './components/SignIn';
 import './assets/css/app.css';
 
-const quizzes = [
+let quizzes = [ //I changed for let for to make modifications
   {
     "id": 1,
     "name": "Quiz name 1",
@@ -79,7 +79,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/quizzes" element={<Quizzes quizzes={quizzes}/>} />
-          <Route path="/quizGame/:id" element={<QuizGame />} />
+          <Route path="/quizGame/:id" element={<QuizGame quizzes={quizzes} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-in" element={<SignIn />} />
         </Routes>

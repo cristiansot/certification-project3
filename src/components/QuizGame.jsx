@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import '../assets/css/quizGame.css'
 
-const QuizGame = () => {
+const QuizGame = ({ quizzes }) => {
 
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -14,32 +14,32 @@ const QuizGame = () => {
 
   const quizId = parseInt(id);//I had to transform into a number
   console.log(quizId);
-  // const findQuiz = quizzes.find((e) => e.id === quizId);
-  // console.log(findQuiz)
+  const findQuiz = quizzes.find((e) => e.id === quizId);
+  console.log(findQuiz)
 
-  // const { questions } = findQuiz;
-  // console.log(questions);
+  const { questions } = findQuiz;
+  console.log(questions);
 
-  // function HandlerAnswer(isCorrect, e) {
-  //   if(isCorrect) setScore(score + 5);
-  //   e.target.classList.add(isCorrect ? "correct" : "incorrect")
-  // }
+  function HandlerAnswer(isCorrect, e) {
+    if(isCorrect) setScore(score + 5);
+    e.target.classList.add(isCorrect ? "correct" : "incorrect")
+  }
 
   return (
     <div className="quizGameWrapper">
       <div>
-        {/* <h1 className="quizName">{findQuiz.name}</h1> */}
+        <h1 className="quizName">{findQuiz.name}</h1>
       </div>
 
       <div>
-        {/* <span>Question {currentQuestion + 1} of</span> {questions.lenght} */}
+        <span>Question {currentQuestion + 1} of</span> {questions.lenght}
       </div>
 
       <div>
-        {/* <h2>{questions[currentQuestion].question}</h2> */}
+        <h2>{questions[currentQuestion].question}</h2>
       </div>
      
-      {/* <div>
+      <div>
         {questions[currentQuestion].options.map((answer) => (
           <button
             key={answer.textAnswer} className="answerBtn"
@@ -47,8 +47,7 @@ const QuizGame = () => {
               {answer.textAnswer}
           </button>
         ))}
-      </div> */}
-
+      </div>
     </div>
   );
 };
