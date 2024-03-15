@@ -7,7 +7,8 @@
 }
 
 .quizName {
-  font-size: 3em;
+  font-size: 2.5em;
+  margin-bottom: 0.1em;
 }
 
 .correct,
@@ -17,7 +18,22 @@
 
 .incorrect,
 .incorrect:hover {
-  background-color: rgb(255, 25, 0);
+  background-color: rgb(255, 89, 0);
+}
+
+.numberQuestions {
+  font-size: 1.2em;
+  padding: 0.5em;
+}
+
+.questions {
+  margin-bottom: 1em;
+}
+
+.quizGameBtns {
+  display: contents;
+  align-content: center;
+  width: auto;
 }
 
 .answerBtn {
@@ -33,7 +49,7 @@
   text-decoration: none;
   font-size: 1.3em;
   width: auto;
-  margin: 1em;
+  margin: 0.6em;
   background-color: #FFF;
   border-radius: 2em;
   cursor: pointer;

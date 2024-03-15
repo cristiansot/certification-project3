@@ -7,7 +7,7 @@ const QuizGame = ({ quizzes }) => {
 
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  // const [gameIsOver, setGameIsOver] = useState(false);
+  const [gameIsOver, setGameIsOver] = useState(false);
 
   const { id } = useParams();//This is a text strings  
   console.log(id);
@@ -23,6 +23,12 @@ const QuizGame = ({ quizzes }) => {
   function HandlerAnswer(isCorrect, e) {
     if(isCorrect) setScore(score + 5);
     e.target.classList.add(isCorrect ? "correct" : "incorrect")
+    //Change next question
+    if(currentQuestion === questions.length -1) {
+      setGameIsOver(true);
+    } else {
+      setCurrentQuestion(currentQuestion +1);
+    }
   }
 
   return (
@@ -31,15 +37,15 @@ const QuizGame = ({ quizzes }) => {
         <h1 className="quizName">{findQuiz.name}</h1>
       </div>
 
-      <div>
+      <div className="numberQuestions">
         <span>Question {currentQuestion + 1} of</span> {questions.length}
       </div>
 
-      <div>
+      <div className="questions">
         <h2>{questions[currentQuestion].question}</h2>
       </div>
      
-      <div>
+      <div className="quizGameBtns">
         {questions[currentQuestion].options.map((answer) => (
           <button
             key={answer.textAnswer} className="answerBtn"
