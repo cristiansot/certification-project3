@@ -1,10 +1,8 @@
 import React from 'react';
 import Crud from './Crud'
-import { useState } from 'react';
-import quiz from '../../data/quiz.json'
 import '../assets/css/quizzes.css'
 
-const Quizzes = () => {
+const Quizzes = ({ quizzes }) => {
   
   return (
     <>
@@ -12,11 +10,11 @@ const Quizzes = () => {
       <button className='createBtn'>Create Quiz</button>
     </div>
     <div className='wrapperBtns'>
-        {quiz.map(quiz => (
+        {quizzes.map(quizzes => (
           <Crud 
-          key={quiz.id}
-          id={quiz.id}
-          name={quiz.name}
+          key={quizzes.id}
+          id={quizzes.id}
+          name={quizzes.name}
           />
         ))}
     </div>

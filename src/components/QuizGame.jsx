@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import quiz from '../../data/quiz.json';
 import '../assets/css/quizGame.css'
 
 const QuizGame = () => {
@@ -12,7 +11,7 @@ const QuizGame = () => {
 
   const { id } = useParams();//This is a text strings  
   const quizId = parseInt(id);//I had to transform into a number
-  const findQuiz = quiz.find((e) => e.id === quizId);
+  const findQuiz = quizzes.find((e) => e.id === quizId);
   console.log(findQuiz)
 
   const { questions } = findQuiz;

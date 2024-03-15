@@ -8,7 +8,69 @@ import Login from './components/Login';
 import SignIn from './components/SignIn';
 import './assets/css/app.css';
 
+const quizzes = [
+  {
+    "id": 1,
+    "name": "Quiz name 1",
+    "questions": [
+      {
+        "id": 2,
+        "question": "This is a question 1?",
+        "points": 5,
+        "options": [
+          { "textAnswer": "Answer 1", "isCorrect": true },
+          { "textAnswer": "Answer 2", "isCorrect": false },
+          { "textAnswer": "Answer 3", "isCorrect": false },
+          { "textAnswer": "Answer 4", "isCorrect": false }
+        ]
+      },
+      {
+        "id": 3,
+        "question": "Question 2",
+        "points": 5,
+        "options": [
+          { "textAnswer": "Answer 1", "isCorrect": true },
+          { "textAnswer": "Answer 2", "isCorrect": false },
+          { "textAnswer": "Answer 3", "isCorrect": false },
+          { "textAnswer": "Answer 4", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Quiz name 2",
+    "questions": [
+      {
+        "id": 5,
+        "question": "Question 1",
+        "points": 5,
+        "options": [
+          { "textAnswer": "Answer 1", "isCorrect": true },
+          { "textAnswer": "Answer 2", "isCorrect": false },
+          { "textAnswer": "Answer 3", "isCorrect": false },
+          { "textAnswer": "Answer 4", "isCorrect": false }
+        ]
+      },
+      {
+        "id": 6,
+        "question": "Question 2",
+        "points": 5,
+        "options": [
+          { "textAnswer": "Answer 1", "isCorrect": true },
+          { "textAnswer": "Answer 2", "isCorrect": false },
+          { "textAnswer": "Answer 3", "isCorrect": false },
+          { "textAnswer": "Answer 4", "isCorrect": false }
+        ]
+      }
+    ]
+  }
+];
+
 const App = () => {
+
+  const [data, setData] = useState(quizzes);
+  
 
   return (
     <Router>
@@ -17,7 +79,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/quizzes" element={<Quizzes />} />
+          <Route path="/quizzes" element={<Quizzes quizzes={quizzes}/>} />
           <Route path="/quizGame/:id" element={<QuizGame />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-in" element={<SignIn />} />
