@@ -6,6 +6,7 @@ import Quizzes from './components/Quizzes';
 import QuizGame from './components/QuizGame';
 import Login from './components/Login';
 import SignIn from './components/SignIn';
+import Create from './components/Create'
 import './assets/css/app.css';
 
 let quizzes = [
@@ -178,6 +179,7 @@ const App = () => {
           <Route path="/quizGame/:id" element={<QuizGame quizzes={quizzes} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/create" element={<Create />} />
         </Routes>
       </div>
     </Router>
