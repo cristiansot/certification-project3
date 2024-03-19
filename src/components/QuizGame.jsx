@@ -40,15 +40,14 @@ const QuizGame = ({ quizzes }) => {
         <h1 className="score">
           You got {score} points
         </h1>
-        {/* <Link to={"/quizGame"}>
-          <button className=''>Play again</button>
-        </Link> */}
         <button onClick={() => (window.location.href = `/quizGame/${id}` )}>
           Play Again
         </button>
+        <button onClick={() => (window.location.href = "/quizzes" )}>
+          Go to Quizzes
+        </button>
       </div>
-    )
-
+    );
 
   return (
     <div className="quizGameWrapper">
