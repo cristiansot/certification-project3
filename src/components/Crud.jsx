@@ -6,11 +6,15 @@ console.log(id + name);
   return (
     <div className="containerCrud">
       <h1>{name}</h1>
-      <Link to={`/quizGame/${id}`} className="playBtn" >
-        Play
-      </Link>
-      <Link className="editBtn" id={id}>Edit</Link>
-      <Link className="deleteBtn" id={id}>Delete</Link>
+
+      <div className='contentCrudBtns'>
+        <Link to={`/quizGame/${id}`} className="playBtn" >
+          Play
+        </Link>
+        <Link className="editBtn" id={id}>Edit</Link>
+        <Link className="deleteBtn" id={id}>Delete</Link>
+      </div>
+    
     </div>
   );
 }

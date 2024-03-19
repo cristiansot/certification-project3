@@ -24,12 +24,31 @@ const QuizGame = ({ quizzes }) => {
     if(isCorrect) setScore(score + 5);
     e.target.classList.add(isCorrect ? "correct" : "incorrect")
     //Change next question
-    if(currentQuestion === questions.length -1) {
-      setGameIsOver(true);
-    } else {
-      setCurrentQuestion(currentQuestion +1);
-    }
+
+    setTimeout(() => {
+      if(currentQuestion === questions.length -1) {
+        setGameIsOver(true);
+      } else {
+        setCurrentQuestion(currentQuestion +1);
+      }
+    }, 500)
   }
+
+  if(gameIsOver)
+    return (
+      <div className="quizGameWrapper">
+        <h1 className="score">
+          You got {score} points
+        </h1>
+        {/* <Link to={"/quizGame"}>
+          <button className=''>Play again</button>
+        </Link> */}
+        <button onClick={() => (window.location.href = `/quizGame/${id}` )}>
+          Play Again
+        </button>
+      </div>
+    )
+
 
   return (
     <div className="quizGameWrapper">
