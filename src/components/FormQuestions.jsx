@@ -14,8 +14,6 @@ const FormQuestions = () => {
     console.log(values);
   };
   
-  const [check, setCheck] = useState(false);
-
   const { handleSubmit, handleChange, errors, values } = useFormik({
     initialValues: {
       question: '',
@@ -64,7 +62,7 @@ return (
         {values.options.map((option, index) => (
           <div className='inputForm' key={index}>
             <input
-              name='textAnswer'
+              name={`options[${index}].textAnswer`}
               className='inputTextAnswer'
               type='text'
               placeholder='Write an Answer'
@@ -74,9 +72,9 @@ return (
 
             <input 
               type='checkbox' 
-              value={true} 
-              name='isCorrect' 
-              onChange={handleChangeCheckBox}
+              value={option.isCorrect} 
+              name={`options[${index}].isCorrect`} 
+              onChange={() => handleChangeCheckBox(index)}
             />
           </div>
         ))}
