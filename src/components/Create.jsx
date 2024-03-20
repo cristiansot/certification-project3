@@ -1,7 +1,6 @@
 import React from 'react';
 import FormQuestions from './FormQuestions';
 
-
 const Create = () => {
 /*I need to create ID*/
   
