@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import '../assets/css/form.css';
@@ -13,14 +14,16 @@ const FormQuestions = () => {
     console.log(values);
   };
   
+  const [check, setCheck] = useState(false);
+
   const { handleSubmit, handleChange, errors, values } = useFormik({
     initialValues: {
       question: '',
       options: [
-        { "textAnswer": '', "isCorrect": ''},
-        // { "textAnswer": '', "isCorrect": ''},
-        // { "textAnswer": '', "isCorrect": ''},
-        // { "textAnswer": '', "isCorrect": ''},
+        { "textAnswer": '', "isCorrect": false },
+        { "textAnswer": '', "isCorrect": false },
+        { "textAnswer": '', "isCorrect": false },
+        { "textAnswer": '', "isCorrect": false },
       ] 
     },
     validationSchema: schema,
@@ -39,30 +42,49 @@ const FormQuestions = () => {
  * https://www.youtube.com/watch?v=zw98_hVFpzE&ab_channel=RoyDigitalTech
 **/
 
-  return (
-    <div className='wrapperForm'>
-      <form onSubmit={handleSubmit}>
-        <div className='contentInputsForm'>
-          <h1>Create Questions</h1>
-
-          <input className='inputWriteQuestion' type="text" placeholder='Write the Question' name='question' value={values.question} onChange={handleChange} />
-          <div>{errors.question && <span>{errors.question}</span>}</div>
-
-          <div className='inputForm'>
-          <input className='inputTextAnswer' type="text" placeholder='Text Answer' name='options[0]' value={values.options} onChange={handleChange} />
-          <div>{errors.options && <span>{errors.options[0]}</span>}</div>
-
-          <input type='checkbox' value={true} name='isCorrect' onChange={handleChangeCheckBox}></input>
-
-        </div>
+return (
+  <div className='wrapperForm'>
+    <form onSubmit={handleSubmit}>
+      <div className='contentInputsForm'>
+        <h1>Create Questions</h1>
+        <h2>Mark the correct alternative with a checkbox</h2>
           
-         
-          <button className='btn' type='submit'>Add Another Question</button>
-        </div> 
-      </form>
-    </div>
-  );
-};
+        <div className='inputForm'>
+          <input 
+            className='inputWriteQuestion'
+            type="text"
+            placeholder='Write the Question' 
+            name='question' 
+            value={values.question} 
+            onChange={handleChange} />
+        </div>
+
+        <div>{errors.question && <span>{errors.question}</span>}</div>
+        
+        {values.options.map((option, index) => (
+          <div className='inputForm' key={index}>
+            <input
+              name='textAnswer'
+              className='inputTextAnswer'
+              type='text'
+              placeholder='Write an Answer'
+              value={option.textAnswer}
+              onChange={handleChange}
+            />
+
+            <input 
+              type='checkbox' 
+              value={true} 
+              name='isCorrect' 
+              onChange={handleChangeCheckBox}
+            />
+          </div>
+        ))}
+        
+        <button className='btn' type='submit'>Add Another Question</button>
+      </div> 
+    </form>
+  </div>
+)};
 
 export default FormQuestions;
-

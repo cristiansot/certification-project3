@@ -15,7 +15,7 @@ let quizzes = [
     "name": "Asynchronous JavaScript & Async-await Syntax",
     "questions": [
       {
-        "id": 2,
+   
         "question": "What is Asynchronous JavaScript?",
         "options": [
           { "textAnswer": "Code that involves callbacks, promises, or async-await to handle operations", "isCorrect": true },
@@ -24,7 +24,7 @@ let quizzes = [
         ]
       },
       {
-        "id": 3,
+      
         "question": "In a real-world scenario, which of the following is a good example of the need for asynchronous programming?",
         "options": [
           { "textAnswer": "Fetching data from a database", "isCorrect": true },
@@ -34,7 +34,7 @@ let quizzes = [
         ]
       },
       {
-        "id": 4,
+        
         "question": "When might you use asynchronous JavaScript in a web application?",
         "options": [
           { "textAnswer": "To animate a button when it's clicked", "isCorrect": false },
@@ -43,7 +43,7 @@ let quizzes = [
         ]
       },
       {
-        "id": 5,
+      
         "question": "What is the purpose of the 'async' keyword when declaring a function?",
         "options": [
           { "textAnswer": "It defines an asynchronous error handler for the function", "isCorrect": false },
@@ -53,7 +53,7 @@ let quizzes = [
         ]
       },
       {
-        "id": 6,
+      
         "question": "Which keyword is used to handle errors in asynchronous code within a 'try-catch' block?",
         "options": [
           { "textAnswer": "'finally'", "isCorrect": false },
@@ -65,11 +65,11 @@ let quizzes = [
     ]
   },
   {
-    "id": 7,
+    "id": 2,
     "name": "REST APIs & Using Fetch",
     "questions": [
       {
-        "id": 8,
+   
         "question": "In a REST API, a 404 status code always indicates the server is down or unreachable",
         "options": [
           { "textAnswer": "True", "isCorrect": false },
@@ -77,7 +77,7 @@ let quizzes = [
         ]
       },
       {
-        "id": 9,
+        
         "question": "Which HTTP status code typically represents a successful response in a REST API when a resource is successfully created?",
         "options": [
           { "textAnswer": "200 OK", "isCorrect": false },
@@ -87,7 +87,7 @@ let quizzes = [
         ]
       },
       {
-        "id": 10,
+   
         "question": "In a RESTful API design, a PUT request is typically used to create a new resource on the server",
         "options": [
           { "textAnswer": "True", "isCorrect": false },
@@ -95,7 +95,7 @@ let quizzes = [
         ]
       },
       {
-        "id": 11,
+        
         "question": "Which function is used to make HTTP requests and handle responses asynchronously?",
         "options": [
           { "textAnswer": "True", "isCorrect": false },
@@ -103,7 +103,7 @@ let quizzes = [
         ]
       },
       {
-        "id": 12,
+
         "question": "Which function is used to make HTTP requests and handle responses asynchronously?",
         "options": [
           { "textAnswer": "console.log", "isCorrect": false },
@@ -113,7 +113,7 @@ let quizzes = [
         ]
       },
       {
-        "id": 13,
+       
         "question": "Which HTTP method is typically used to retrieve data from a server?",
         "options": [
           { "textAnswer": "PUT", "isCorrect": false },
@@ -123,7 +123,7 @@ let quizzes = [
         ]
       },
       {
-        "id": 14,
+      
         "question": "Which HTTP status code is commonly used to indicate that a client's request lacks proper authentication credentials?",
         "options": [
           { "textAnswer": "401 Unauthorized", "isCorrect": true },
@@ -133,7 +133,7 @@ let quizzes = [
         ]
       },
       {
-        "id": 15,
+       
         "question": "The Fetch API is available in both browsers and Node.js environments.",
         "options": [
           { "textAnswer": "True", "isCorrect": true },
@@ -141,7 +141,7 @@ let quizzes = [
         ]
       },
       {
-        "id": 16,
+       
         "question": "Which HTTP status code typically represents a successful response in a REST API when a resource is successfully created?",
         "options": [
           { "textAnswer": "200 OK", "isCorrect": false },
@@ -151,7 +151,7 @@ let quizzes = [
         ]
       },
       {
-        "id": 17,
+       
         "question": "What is the primary purpose of Postman?",
         "options": [
           { "textAnswer": "Writing server-side code", "isCorrect": false },
