@@ -6,7 +6,10 @@ import '../assets/css/form.css';
 
 const schema = Yup.object({
   question: Yup.string().required('Required'),
-  // options: Yup.array().of(Yup.string().required('Required')),
+  options: Yup.array().of(object({
+    textAnswer: Yup.string(),
+    isCorrect: Yup.boolean(),
+  }).required('Required')),
 });
 
 const FormQuestions = () => {
@@ -33,11 +36,13 @@ const FormQuestions = () => {
     console.log(value)
   }
 
-/** I saw this documentation and videos for to understand how to develop the form
+/** I saw this documentation, videos and questions to chatGPT for to understand how to develop the form
  * https://formik.org/docs/guides/arrays
  * www.youtube.com/watch?v=Or0rljWUyEM&ab_channel=EWebik
  * https://www.youtube.com/watch?v=7Ophfq0lEAY&ab_channel=NikitaDev
  * https://www.youtube.com/watch?v=zw98_hVFpzE&ab_channel=RoyDigitalTech
+ * https://chat.openai.com/share/d2f4cef2-c2b9-4fe8-8911-27d8fbd916c3
+ * https://chat.openai.com/share/0b116bc2-d580-4895-9b30-2c45c9fe861f
 **/
 
 return (
