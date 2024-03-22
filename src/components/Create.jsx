@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFormik } from 'formik';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import * as Yup from 'yup';
 import FormQuestions from './FormQuestions';
 import '../assets/css/create.css';
@@ -14,22 +14,27 @@ const Create = () => {
   const [newData, setNewData] = useState([]);
 
   const getData = (data) => {
-    setNewData([...newData, data])
-     console.log(data)
+    setNewData([...newData, data]);
+    console.log(data);
   }
 
   const send = (values, { resetForm }) => {
-    // console.log(values);
+    console.log(values);
     resetForm();
   };
 
-  const { handleSubmit, handleChange, errors, values } = useFormik({
+  const { handleSubmit, handleChange, errors, values, setFieldValue } = useFormik({
     initialValues: {
-      title: ''
+      title: '',
+      questions: [],
     },
     validationSchema: schema,
     onSubmit: send,
   });
+
+  useEffect(() => {
+    setFieldValue('questions', newData);
+  }, [newData, setFieldValue]);
 
   return (
     <div className='contentCreate'>
@@ -51,14 +56,12 @@ const Create = () => {
         </div>
       </form>
 
-      <FormQuestions getData={ getData }/>
+      <FormQuestions getData={getData} />
 
-      <div>{JSON.stringify(newData, null, 2 )}</div>
     </div> 
   );
 };
 
 export default Create;
-
 
 //www.youtube.com/watch?v=U3IJ7dsDVaE&ab_channel=Developero min 3:58
