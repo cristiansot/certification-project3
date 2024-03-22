@@ -11,11 +11,11 @@ const schema = Yup.object({
 
 const Create = () => {
 
-  const [newData, setNewData] = useState();
+  const [newData, setNewData] = useState([]);
 
   const getData = (data) => {
-    setNewData(data)
-    console.log(data)
+    setNewData([...newData, data])
+     console.log(data)
   }
 
   const send = (values, { resetForm }) => {
@@ -53,8 +53,12 @@ const Create = () => {
 
       <FormQuestions getData={ getData }/>
 
+      <div>{JSON.stringify(newData, null, 2 )}</div>
     </div> 
   );
 };
 
 export default Create;
+
+
+//www.youtube.com/watch?v=U3IJ7dsDVaE&ab_channel=Developero min 3:58

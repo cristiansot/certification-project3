@@ -3,7 +3,6 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import '../assets/css/form.css';
 
-
 const schema = Yup.object({
   question: Yup.string().required('Required'),
   options: Yup.array().of(
@@ -89,8 +88,6 @@ const FormQuestions = ({ getData }) => {
 };
 
 export default FormQuestions;
-
-
 
 /** I saw this documentation, videos and questions to chatGPT for to understand how to develop the form
  * https://formik.org/docs/guides/arrays
