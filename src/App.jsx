@@ -3,15 +3,16 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Quizzes from './components/Quizzes';
 import QuizGame from './components/QuizGame';
+import QuizGameLS from './components/QuizGameLS';
 import Login from './components/Login';
 import SignIn from './components/SignIn';
 import Create from './components/Create'
 import './assets/css/app.css';
 
-let quizzes = [
+const quizzes = [
   {
     "id": 1,
-    "name": "Asynchronous JavaScript & Async-await Syntax",
+    "title": "Asynchronous JavaScript & Async-await Syntax",
     "questions": [
       {
    
@@ -65,7 +66,7 @@ let quizzes = [
   },
   {
     "id": 2,
-    "name": "REST APIs & Using Fetch",
+    "title": "REST APIs & Using Fetch",
     "questions": [
       {
    
@@ -163,7 +164,10 @@ let quizzes = [
   }
 ];
 
-const quiz = JSON.parse(localStorage.getItem('quiz'));
+console.log(quizzes)
+
+const quiz = [JSON.parse(localStorage.getItem('quiz'))];
+
 console.log(quiz)
 
 const App = () => {
@@ -172,11 +176,13 @@ const App = () => {
     <Router>
       <div>
         <NavBar />
+        {/* <div><pre>{JSON.stringify(quiz, null, 2)}</pre></div> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/quizzes" element={<Quizzes quizzes={quizzes} quiz={quiz} />} />
           <Route path="/quizGame/:id" element={<QuizGame quizzes={quizzes} />} />
+          <Route path="/quizGameLS/:id" element={<QuizGameLS quiz={quiz} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/create" element={<Create />} />
@@ -187,3 +193,6 @@ const App = () => {
 };
 
 export default App;
+
+//Transfor object to aaray
+//https://platzi.com/tutoriales/3271-javascript-practico/24316-como-transformar-un-objeto-a-un-array/

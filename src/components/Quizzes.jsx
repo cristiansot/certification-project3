@@ -18,17 +18,17 @@ const Quizzes = ({ quizzes, quiz }) => {
           <Crud 
           key={quizzes.id}
           id={quizzes.id}
-          name={quizzes.name}
+          name={quizzes.title}
           />
         ))}
     </div>
 
     <div className='wrapperBtns'>
-        {quiz.map(quiz => (
+        {quiz.map((quiz, index) => (
           <CrudLocalStorage
-          key={quiz.id}
+          key={index}
           id={quiz.id}
-          name={quiz.name}
+          name={quiz.title}
           />
         ))}
     </div>

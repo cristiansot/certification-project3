@@ -11,8 +11,7 @@ const Crud = ({ id, name}) => {
         <Link to={`/quizGame/${id}`} className="playBtn" >
           Play
         </Link>
-        {/* <Link className="editBtn" id={id}>Edit</Link>
-        <Link className="deleteBtn" id={id}>Delete</Link> */}
+    
       </div>
     
     </div>
