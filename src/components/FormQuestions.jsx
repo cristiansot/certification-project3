@@ -3,15 +3,6 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import '../assets/css/form.css';
 
-  /** I saw this documentation, videos and questions to chatGPT for to understand how to develop the form
- * https://formik.org/docs/guides/arrays
- * www.youtube.com/watch?v=Or0rljWUyEM&ab_channel=EWebik
- * https://www.youtube.com/watch?v=7Ophfq0lEAY&ab_channel=NikitaDev
- * https://www.youtube.com/watch?v=zw98_hVFpzE&ab_channel=RoyDigitalTech
- * https://chat.openai.com/share/d2f4cef2-c2b9-4fe8-8911-27d8fbd916c3
- * https://chat.openai.com/share/0b116bc2-d580-4895-9b30-2c45c9fe861f
- * https://chat.openai.com/share/d87f0043-78a6-459f-ba99-ab2d77c8e1a9
-**/
 
 const schema = Yup.object({
   question: Yup.string().required('Required'),
@@ -23,12 +14,14 @@ const schema = Yup.object({
   ).required('Required'),
 });
 
-const FormQuestions = () => {
+const FormQuestions = ({ getData }) => {
+
   const send = (values, { resetForm }) => {
     console.log(values);
+    getData(values);
     resetForm();
   };
-  
+
   const { handleSubmit, handleChange, errors, values, setFieldValue } = useFormik({
     initialValues: {
       question: '',
@@ -48,7 +41,6 @@ const FormQuestions = () => {
     updateValues[index].isCorrect = !updateValues[index].isCorrect;
     setFieldValue('options', updateValues);
   }
-  
 
   return (
     <div className='wrapperForm'>
@@ -89,7 +81,7 @@ const FormQuestions = () => {
             </div>
           ))}
           
-          <button className='btn' type='submit'>Add Another Question</button>
+          <button className='formBtn' type='submit'>Add Another Question</button>
         </div> 
       </form>
     </div>
@@ -100,3 +92,12 @@ export default FormQuestions;
 
 
 
+/** I saw this documentation, videos and questions to chatGPT for to understand how to develop the form
+ * https://formik.org/docs/guides/arrays
+ * www.youtube.com/watch?v=Or0rljWUyEM&ab_channel=EWebik
+ * https://www.youtube.com/watch?v=7Ophfq0lEAY&ab_channel=NikitaDev
+ * https://www.youtube.com/watch?v=zw98_hVFpzE&ab_channel=RoyDigitalTech
+ * https://chat.openai.com/share/d2f4cef2-c2b9-4fe8-8911-27d8fbd916c3
+ * https://chat.openai.com/share/0b116bc2-d580-4895-9b30-2c45c9fe861f
+ * https://chat.openai.com/share/d87f0043-78a6-459f-ba99-ab2d77c8e1a9
+**/
