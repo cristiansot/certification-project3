@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
-import { useState } from 'react';
 import * as Yup from 'yup';
+import { v4 as uuidv4 } from 'uuid';
 import FormQuestions from './FormQuestions';
 import '../assets/css/create.css';
 
@@ -10,13 +10,12 @@ const schema = Yup.object({
 });
 
 const Create = () => {
-
   const [newData, setNewData] = useState([]);
 
   const getData = (data) => {
-    setNewData([...newData, data]);
+    setNewData(prevData => [...prevData, data]);
     console.log(data);
-  }
+  };
 
   const send = (values, { resetForm }) => {
     console.log(values);
@@ -25,6 +24,7 @@ const Create = () => {
 
   const { handleSubmit, handleChange, errors, values, setFieldValue } = useFormik({
     initialValues: {
+      id: uuidv4(),
       title: '',
       questions: [],
     },
@@ -33,7 +33,9 @@ const Create = () => {
   });
 
   useEffect(() => {
-    setFieldValue('questions', newData);
+    if (newData.length > 0) {
+      setFieldValue('questions', newData);
+    }
   }, [newData, setFieldValue]);
 
   return (
@@ -57,11 +59,14 @@ const Create = () => {
       </form>
 
       <FormQuestions getData={getData} />
-
     </div> 
   );
 };
 
 export default Create;
 
+
 //www.youtube.com/watch?v=U3IJ7dsDVaE&ab_channel=Developero min 3:58
+
+//LocalStorage
+//www.youtube.com/watch?v=F6j_V6FUYTI&ab_channel=hdeleon.net
