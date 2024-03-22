@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
@@ -164,9 +163,10 @@ let quizzes = [
   }
 ];
 
-const App = () => {
+const quiz = JSON.parse(localStorage.getItem('quiz'));
+console.log(quiz)
 
-  const [data, setData] = useState(quizzes);
+const App = () => {
   
   return (
     <Router>
@@ -175,7 +175,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/quizzes" element={<Quizzes quizzes={quizzes}/>} />
+          <Route path="/quizzes" element={<Quizzes quizzes={quizzes} quiz={quiz} />} />
           <Route path="/quizGame/:id" element={<QuizGame quizzes={quizzes} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-in" element={<SignIn />} />
