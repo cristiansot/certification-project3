@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Quizzes from './components/Quizzes';
@@ -163,20 +164,27 @@ const quizzes = [
     ]
   }
 ];
-
 console.log(quizzes)
 
-const quiz = [JSON.parse(localStorage.getItem('quiz'))];
-
-console.log(quiz)
-
 const App = () => {
+
+  const [quiz, setQuiz] = useState([])
+
+  const getQuiz = () => {
+    const localStorageData = JSON.parse(localStorage.getItem('quiz'));
+    setQuiz(localStorageData)
+  }
+  console.log(quiz)
+
+  useEffect(() => {
+    getQuiz();
+  }, []);
   
   return (
     <Router>
       <div>
         <NavBar />
-        {/* <div><pre>{JSON.stringify(quiz, null, 2)}</pre></div> */}
+        <div><pre>{JSON.stringify(quiz, null, 2)}</pre></div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
