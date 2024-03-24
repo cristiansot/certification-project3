@@ -168,9 +168,10 @@ const quizzes = [
 
 const App = () => {
 
-  const [quiz, setQuiz] = useState([])// This is the data from the create quiz, it must be sent to local storage
-  const [totalScore, setTotalScore] = useState([0]);// Game data, the data must be increased
-  const [scoreLS, setScoreLS] = useState()// Local storage data
+  const [quiz, setQuiz] = useState([]);// This is the data from the create quiz, it must be sent to local storage
+  const [totalScore, setTotalScore] = useState([0]);// Total Score, should to send to localSotage
+  const [dataGame, setDataGame] = useState();// Game data
+  const [dataLocalStorage, setDataLocalStorage] = useState()// Local storage data
 
   const dataScore = (data) => {
     const updatedScore = [...totalScore, data];
@@ -178,8 +179,8 @@ const App = () => {
   };
 
   const getScore = () => {
-    const localStorageScore = JSON.parse(localStorage.getItem('score'));
-    setScoreLS(localStorageScore)
+    const localStorageScore = [JSON.parse(localStorage.getItem('score'))];
+    setTotalScore(localStorageScore)
     console.log(localStorageScore)
   }
 
