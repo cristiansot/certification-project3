@@ -168,9 +168,9 @@ const quizzes = [
 
 const App = () => {
 
-  const [quiz, setQuiz] = useState([])
-  const [totalScore, setTotalScore] = useState([0]);
-  const [scoreLS, setScoreLS] = useState()
+  const [quiz, setQuiz] = useState([])// This is the data from the create quiz, it must be sent to local storage
+  const [totalScore, setTotalScore] = useState([0]);// Game data, the data must be increased
+  const [scoreLS, setScoreLS] = useState()// Local storage data
 
   const dataScore = (data) => {
     const updatedScore = [...totalScore, data];

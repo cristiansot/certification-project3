@@ -23,6 +23,7 @@ const FormQuestions = ({ getData }) => {
 
   const { handleSubmit, handleChange, errors, values, setFieldValue } = useFormik({
     initialValues: {
+      id: '', // uuidv4 must be added
       question: '',
       options: [
         { textAnswer: '', isCorrect: false },
