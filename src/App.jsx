@@ -170,12 +170,22 @@ const App = () => {
 
   const [quiz, setQuiz] = useState([])
   const [totalScore, setTotalScore] = useState([0]);
+  const [scoreLS, setScoreLS] = useState()
 
   const dataScore = (data) => {
     const updatedScore = [...totalScore, data];
     setTotalScore(updatedScore);
-    localStorage.setItem('score', JSON.stringify(data))
   };
+
+  const getScore = () => {
+    const localStorageScore = JSON.parse(localStorage.getItem('score'));
+    setScoreLS(localStorageScore)
+    console.log(localStorageScore)
+  }
+
+  useEffect(() => {
+    getScore();
+  }, []);
   
   const getQuiz = () => {
     const localStorageData = [JSON.parse(localStorage.getItem('quiz'))];
@@ -196,7 +206,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/quizzes" element={<Quizzes quizzes={quizzes} quiz={quiz} />} />
-          <Route path="/quizGame/:id" element={<QuizGame quizzes={quizzes} dataScore={dataScore} />} />
+          <Route path="/quizGame/:id" element={<QuizGame quizzes={quizzes} dataScore={dataScore} totalScore={totalScore} />} />
           <Route path="/quizGameLS/:id" element={<QuizGameLS quiz={quiz} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-in" element={<SignIn />} />

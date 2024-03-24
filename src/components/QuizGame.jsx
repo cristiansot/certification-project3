@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import '../assets/css/quizGame.css'
 
-const QuizGame = ({ quizzes, dataScore }) => {
+const QuizGame = ({ quizzes, dataScore, totalScore }) => {
 
+  // console.log('Total Score: ' + totalScore)
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameIsOver, setGameIsOver] = useState(false);
@@ -40,13 +41,19 @@ const QuizGame = ({ quizzes, dataScore }) => {
     }, 300)
   }
 
+  const handleSubmit = () => {
+    window.location.href = `/quizGame/${id}`;
+    const lastData = totalScore[totalScore.length - 1];
+    localStorage.setItem('score', JSON.stringify(lastData))
+  }
+
   if(gameIsOver)
     return (
       <div className="quizGameWrapper">
         <h1 className="score">
           You got {score} points
         </h1>
-        <button onClick={() => (window.location.href = `/quizGame/${id}` )}>
+        <button onClick={handleSubmit}>
           Play Again
         </button>
         <button onClick={() => (window.location.href = "/quizzes" )}>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../assets/css/navBar.css';
 
 const NavBar = ({ totalScore }) => {
+  // console.log('Total Score: ' + totalScore)
 
   const lastData = totalScore[totalScore.length - 1];
 
