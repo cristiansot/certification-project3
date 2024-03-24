@@ -12,7 +12,7 @@ const QuizGame = ({ quizzes, dataScore }) => {
   useEffect(() => {
     dataScore(score);
     // console.log(dataScore)
-  }, [score, dataScore]);
+  }, [score]);
 
   const { id } = useParams();//This is a text strings  
   // console.log(id);

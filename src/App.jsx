@@ -169,18 +169,19 @@ const quizzes = [
 const App = () => {
 
   const [quiz, setQuiz] = useState([])
-  const [totalScore, setTotalScore] = useState(0);
+  const [totalScore, setTotalScore] = useState([0]);
 
+  const dataScore = (data) => {
+    const updatedScore = [...totalScore, data];
+    setTotalScore(updatedScore);
+  };
+  
   const getQuiz = () => {
     const localStorageData = [JSON.parse(localStorage.getItem('quiz'))];
     setQuiz(localStorageData)
   }
   // console.log(quiz)
 
-  const dataScore = (data) => {
-    setTotalScore(data);
-  }
-  
   useEffect(() => {
     getQuiz();
   }, []);
@@ -209,3 +210,6 @@ export default App;
 
 //Transfor object to aaray
 //https://platzi.com/tutoriales/3271-javascript-practico/24316-como-transformar-un-objeto-a-un-array/
+
+//UseState
+//www.youtube.com/watch?v=hYYKRR-PSJU&ab_channel=TEV.Studio
