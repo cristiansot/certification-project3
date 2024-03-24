@@ -1,32 +1,37 @@
 I asked how to structure the JSON file
 https://chat.openai.com/share/ed260f05-fe20-4f43-8cd1-0d3b62c80e01
 
-******************************************************************
+*****************************************************************************
 
 I asked why .map did not works in my new json structure
 https://chat.openai.com/share/16f2a90f-4bbf-498a-87c0-9e8484e2109f
 
-******************************************************************
+*****************************************************************************
 
 Problems with onClick={handleChange}
 https://chat.openai.com/share/d2f4cef2-c2b9-4fe8-8911-27d8fbd916c3
 
-******************************************************************
+*****************************************************************************
 
 Resolving issues with handleChange
 https://chat.openai.com/share/0b116bc2-d580-4895-9b30-2c45c9fe861f
 
-******************************************************************
+*****************************************************************************
 
 HandleCheckBox, trying to understando how to save the data into a formik
 https://chat.openai.com/share/d87f0043-78a6-459f-ba99-ab2d77c8e1a9
 
-******************************************************************
+*****************************************************************************
 
 Issues with props
 https://chat.openai.com/share/ec61739b-297d-44c4-a0c1-7f548f54f6ff
 
-******************************************************************
+*****************************************************************************
 
 //Printing on the screen the last array in the list
 //https://chat.openai.com/share/4456cd86-29f5-4445-ac78-ff5dddb5b5ad
+
+*****************************************************************************
+
+//Why is not working my .concat
+//https://chat.openai.com/share/ba4284d7-b620-482b-aee3-aba74bc4801c

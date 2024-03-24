@@ -173,12 +173,26 @@ const App = () => {
   const [dataGame, setDataGame] = useState([0]);// Game data
   const [dataLocalStorage, setDataLocalStorage] = useState()// Local storage data
 
+  console.log("totalScore:", totalScore);
+  console.log("dataGame:", dataGame);
+  console.log("dataLocalStorage:", dataLocalStorage);
+
 //Data form quiz Game
   const dataScore = (data) => {
     const updatedScore = [...dataGame, data];
     setDataGame(updatedScore);
-    console.log(updatedScore)
+    // console.log(updatedScore)
   };
+
+/** Function that adds the data of the localStorage with that of the game perhaps to then store it in totalScore 
+/* and send the data to the localStorage to update */
+
+const plusData = () => {
+  const concatData = dataGame.concat(dataLocalStorage);
+  const updatedTotalScore = [...totalScore, ...concatData];
+  setTotalScore(updatedTotalScore);
+  // console.log(updatedTotalScore);
+};
 
 
 //Data from LocalStorage
@@ -219,7 +233,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/quizzes" element={<Quizzes quizzes={quizzes} quiz={quiz} />} />
-          <Route path="/quizGame/:id" element={<QuizGame quizzes={quizzes} dataScore={dataScore} />} />
+          <Route path="/quizGame/:id" element={<QuizGame quizzes={quizzes} dataScore={dataScore} totalScore={totalScore} />} />
           <Route path="/quizGameLS/:id" element={<QuizGameLS quiz={quiz} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-in" element={<SignIn />} />
@@ -237,3 +251,6 @@ export default App;
 
 //UseState
 //www.youtube.com/watch?v=hYYKRR-PSJU&ab_channel=TEV.Studio
+
+//Concat
+//https://chat.openai.com/share/ba4284d7-b620-482b-aee3-aba74bc4801c
