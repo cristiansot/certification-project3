@@ -170,18 +170,30 @@ const App = () => {
 
   const [quiz, setQuiz] = useState([]);// This is the data from the create quiz, it must be sent to local storage
   const [totalScore, setTotalScore] = useState([0]);// Total Score, should to send to localSotage
-  const [dataGame, setDataGame] = useState();// Game data
+  const [dataGame, setDataGame] = useState([0]);// Game data
   const [dataLocalStorage, setDataLocalStorage] = useState()// Local storage data
 
+//Data form quiz Game
   const dataScore = (data) => {
-    const updatedScore = [...totalScore, data];
-    setTotalScore(updatedScore);
+    const updatedScore = [...dataGame, data];
+    setDataGame(updatedScore);
+    console.log(updatedScore)
   };
 
+
+//Data from LocalStorage
   const getScore = () => {
-    const localStorageScore = [JSON.parse(localStorage.getItem('score'))];
-    setTotalScore(localStorageScore)
-    console.log(localStorageScore)
+    const localStorageScore = localStorage.getItem('score');
+    if(localStorageScore) {
+      try {
+        const parsedScore = JSON.parse(localStorageScore)
+        setDataLocalStorage(parsedScore)
+      } catch (error) {
+        console.log('Error parsing JASON', error)
+      }
+    } else {
+      console.log('No data into localStorage')
+    }
   }
 
   useEffect(() => {
@@ -201,13 +213,13 @@ const App = () => {
   return (
     <Router>
       <div>
-        <NavBar totalScore={totalScore} />
+        <NavBar dataLocalStorage={dataLocalStorage} />
         {/* <div><pre>{JSON.stringify(quiz, null, 2)}</pre></div> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/quizzes" element={<Quizzes quizzes={quizzes} quiz={quiz} />} />
-          <Route path="/quizGame/:id" element={<QuizGame quizzes={quizzes} dataScore={dataScore} totalScore={totalScore} />} />
+          <Route path="/quizGame/:id" element={<QuizGame quizzes={quizzes} dataScore={dataScore} />} />
           <Route path="/quizGameLS/:id" element={<QuizGameLS quiz={quiz} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-in" element={<SignIn />} />

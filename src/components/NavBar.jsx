@@ -2,9 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/navBar.css';
 
-const NavBar = ({ totalScore }) => {
-
-  const lastData = totalScore[totalScore.length - 1];
+const NavBar = ({ dataLocalStorage }) => {
 
   return (
     <div className='contentNavBarBtns'>
@@ -15,7 +13,7 @@ const NavBar = ({ totalScore }) => {
       </div>
 
       <div>
-        <h2 className='totalScore'>Total Score: {lastData}</h2>
+        <h2 className='totalScore'>Total Score: {dataLocalStorage}</h2>
       </div>
     
       <div className='loginNadSignInBtns'>
