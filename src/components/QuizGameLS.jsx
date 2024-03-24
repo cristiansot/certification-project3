@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import '../assets/css/quizGame.css'
 
@@ -10,13 +9,13 @@ const QuizGame = ({ quiz }) => {
   const [gameIsOver, setGameIsOver] = useState(false);
 
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
   
   const findQuiz = quiz.find((e) => e.id === id);
-  console.log(findQuiz)
+  // console.log(findQuiz)
 
   const { questions } = findQuiz;
-  console.log(questions);
+  // console.log(questions);
 
   function HandlerAnswer(isCorrect, e) {
     if(isCorrect) setScore(score + 5);
@@ -40,7 +39,7 @@ const QuizGame = ({ quiz }) => {
         <button onClick={() => (window.location.href = `/quizGameLS/${id}` )}>
           Play Again
         </button>
-        <button onClick={() => (window.location.href = "/quiz" )}>
+        <button onClick={() => (window.location.href = "/quizzes" )}>
           Go to Quizzes
         </button>
       </div>

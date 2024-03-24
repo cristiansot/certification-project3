@@ -1,24 +1,30 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import '../assets/css/quizGame.css'
 
-const QuizGame = ({ quizzes }) => {
+const QuizGame = ({ quizzes, dataScore }) => {
 
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameIsOver, setGameIsOver] = useState(false);
 
+  useEffect(() => {
+    dataScore(score);
+    // console.log(dataScore)
+  }, [score, dataScore]);
+
   const { id } = useParams();//This is a text strings  
-  console.log(id);
+  // console.log(id);
 
   const quizId = parseInt(id);//I had to transform into a number
-  console.log(quizId);
+  // console.log(quizId);
+
   const findQuiz = quizzes.find((e) => e.id === quizId);
-  console.log(findQuiz)
+  // console.log(findQuiz)
 
   const { questions } = findQuiz;
-  console.log(questions);
+  // console.log(questions);
 
   function HandlerAnswer(isCorrect, e) {
     if(isCorrect) setScore(score + 5);
@@ -31,7 +37,7 @@ const QuizGame = ({ quizzes }) => {
       } else {
         setCurrentQuestion(currentQuestion +1);
       }
-    }, 500)
+    }, 300)
   }
 
   if(gameIsOver)

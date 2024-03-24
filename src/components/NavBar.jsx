@@ -1,8 +1,9 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/navBar.css';
 
-const NavBar = () => {
+const NavBar = ({ totalScore }) => {
 
   return (
     <div className='contentNavBarBtns'>
@@ -10,6 +11,10 @@ const NavBar = () => {
         <Link to={"/home"}>
           <button className='homeBtn'>Home</button>
         </Link>
+      </div>
+
+      <div>
+        <h2 className='totalScore'>Total Score: {totalScore}</h2>
       </div>
     
       <div className='loginNadSignInBtns'>

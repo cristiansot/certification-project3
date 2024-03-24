@@ -164,18 +164,23 @@ const quizzes = [
     ]
   }
 ];
-console.log(quizzes)
+// console.log(quizzes)
 
 const App = () => {
 
   const [quiz, setQuiz] = useState([])
+  const [totalScore, setTotalScore] = useState(0);
 
   const getQuiz = () => {
-    const localStorageData = JSON.parse(localStorage.getItem('quiz'));
+    const localStorageData = [JSON.parse(localStorage.getItem('quiz'))];
     setQuiz(localStorageData)
   }
-  console.log(quiz)
+  // console.log(quiz)
 
+  const dataScore = (data) => {
+    setTotalScore(data);
+  }
+  
   useEffect(() => {
     getQuiz();
   }, []);
@@ -183,13 +188,13 @@ const App = () => {
   return (
     <Router>
       <div>
-        <NavBar />
-        <div><pre>{JSON.stringify(quiz, null, 2)}</pre></div>
+        <NavBar totalScore={totalScore} />
+        {/* <div><pre>{JSON.stringify(quiz, null, 2)}</pre></div> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/quizzes" element={<Quizzes quizzes={quizzes} quiz={quiz} />} />
-          <Route path="/quizGame/:id" element={<QuizGame quizzes={quizzes} />} />
+          <Route path="/quizGame/:id" element={<QuizGame quizzes={quizzes} dataScore={dataScore} />} />
           <Route path="/quizGameLS/:id" element={<QuizGameLS quiz={quiz} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-in" element={<SignIn />} />
