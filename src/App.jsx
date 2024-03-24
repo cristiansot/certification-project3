@@ -174,6 +174,7 @@ const App = () => {
   const dataScore = (data) => {
     const updatedScore = [...totalScore, data];
     setTotalScore(updatedScore);
+    localStorage.setItem('score', JSON.stringify(data))
   };
   
   const getQuiz = () => {

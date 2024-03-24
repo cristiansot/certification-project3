@@ -4,6 +4,8 @@ import '../assets/css/navBar.css';
 
 const NavBar = ({ totalScore }) => {
 
+  const lastData = totalScore[totalScore.length - 1];
+
   return (
     <div className='contentNavBarBtns'>
       <div className='contentHomeBtn'>
@@ -13,7 +15,7 @@ const NavBar = ({ totalScore }) => {
       </div>
 
       <div>
-        <h2 className='totalScore'>Total Score: {totalScore}</h2>
+        <h2 className='totalScore'>Total Score: {lastData}</h2>
       </div>
     
       <div className='loginNadSignInBtns'>
