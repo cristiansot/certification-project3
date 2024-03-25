@@ -171,11 +171,12 @@ const App = () => {
   const [quiz, setQuiz] = useState([]);// This is the data from the create quiz, it must be sent to local storage
   const [totalScore, setTotalScore] = useState([0]);// Total Score, should to send to localSotage
   const [dataGame, setDataGame] = useState([0]);// Game data
-  const [dataLocalStorage, setDataLocalStorage] = useState()// Local storage data
+  const [dataLocalStorage, setDataLocalStorage] = useState((0))// Local storage data
 
+  // console.log("dataLocalStorage:", dataLocalStorage);
+  // console.log("dataGame:", dataGame);
   console.log("totalScore:", totalScore);
-  console.log("dataGame:", dataGame);
-  console.log("dataLocalStorage:", dataLocalStorage);
+
 
 //Data form quiz Game
   const dataScore = (data) => {
@@ -187,14 +188,21 @@ const App = () => {
 /** Function that adds the data of the localStorage with that of the game perhaps to then store it in totalScore 
 /* and send the data to the localStorage to update */
 
-const plusData = () => {
-  const concatData = dataGame.concat(dataLocalStorage);
-  const updatedTotalScore = [...totalScore, ...concatData];
-  setTotalScore(updatedTotalScore);
-  // console.log(updatedTotalScore);
+const dataPlus = () => {
+  const lastDataGame = dataGame[dataGame.length - 1];
+  const sum = lastDataGame + dataLocalStorage;
+  console.log('lastDataGame ',lastDataGame)
+  console.log('dataLocalStorage ', dataLocalStorage)
+  setTotalScore(sum);
 };
 
+useEffect(() => {
+  dataPlus()
+},[dataGame, dataLocalStorage])
 
+// sum([...totalScore]);
+
+  
 //Data from LocalStorage
   const getScore = () => {
     const localStorageScore = localStorage.getItem('score');
