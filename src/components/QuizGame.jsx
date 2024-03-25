@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import '../assets/css/quizGame.css'
 
-const QuizGame = ({ quizzes, dataScore, totalScore }) => {
+const QuizGame = ({ dataScore, quiz, totalScore }) => {
 
   // console.log('Total Score: ' + totalScore)
   const [score, setScore] = useState(0);
@@ -18,10 +18,7 @@ const QuizGame = ({ quizzes, dataScore, totalScore }) => {
   const { id } = useParams();//This is a text strings  
   // console.log(id);
 
-  const quizId = parseInt(id);//I had to transform into a number
-  // console.log(quizId);
-
-  const findQuiz = quizzes.find((e) => e.id === quizId);
+  const findQuiz = quiz.find((e) => e.id === id);
   // console.log(findQuiz)
 
   const { questions } = findQuiz;
@@ -47,6 +44,11 @@ const QuizGame = ({ quizzes, dataScore, totalScore }) => {
     localStorage.setItem('score', JSON.stringify(totalScore))
   }
 
+  const handleComeBack = () => {
+    window.location.href = window.location.href = "/quizzes";
+    localStorage.setItem('score', JSON.stringify(totalScore))
+  }
+
   if(gameIsOver)
     return (
       <div className="quizGameWrapper">
@@ -56,7 +58,7 @@ const QuizGame = ({ quizzes, dataScore, totalScore }) => {
         <button onClick={handleSubmit}>
           Play Again
         </button>
-        <button onClick={() => (window.location.href = "/quizzes" )}>
+        <button onClick={handleComeBack}>
           Go to Quizzes
         </button>
       </div>

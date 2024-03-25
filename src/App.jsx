@@ -4,7 +4,6 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Quizzes from './components/Quizzes';
 import QuizGame from './components/QuizGame';
-import QuizGameLS from './components/QuizGameLS';
 import Login from './components/Login';
 import SignIn from './components/SignIn';
 import Create from './components/Create'
@@ -12,7 +11,7 @@ import './assets/css/app.css';
 
 const quizzes = [
   {
-    "id": 1,
+    "id": "0afc35e4-14d0-48e6-bdde-5eb2437066bd",
     "title": "Asynchronous JavaScript & Async-await Syntax",
     "questions": [
       {
@@ -66,7 +65,7 @@ const quizzes = [
     ]
   },
   {
-    "id": 2,
+    "id": "1jsc35e4-22d0-34e6-ddde-5eb2439866hs",
     "title": "REST APIs & Using Fetch",
     "questions": [
       {
@@ -168,14 +167,19 @@ const quizzes = [
 
 const App = () => {
 
-  const [quiz, setQuiz] = useState([]);// This is the data from the create quiz, it must be sent to local storage
+  const [quiz, setQuiz] = useState();// This is the data from the create quiz, it must be sent to local storage
   const [totalScore, setTotalScore] = useState([0]);// Total Score, should to send to localSotage
   const [dataGame, setDataGame] = useState([0]);// Game data
   const [dataLocalStorage, setDataLocalStorage] = useState((0))// Local storage data
 
   // console.log("dataLocalStorage:", dataLocalStorage);
   // console.log("dataGame:", dataGame);
-  console.log("totalScore:", totalScore);
+  // console.log("totalScore:", totalScore);
+
+  useEffect(() => {
+    console.log("New value of quiz:", quiz);
+    setQuiz(quiz);
+  }, [quiz, quizzes]);
 
 
 //Data form quiz Game
@@ -202,7 +206,6 @@ useEffect(() => {
 
 // sum([...totalScore]);
 
-  
 //Data from LocalStorage
   const getScore = () => {
     const localStorageScore = localStorage.getItem('score');
@@ -224,8 +227,11 @@ useEffect(() => {
   
   const getQuiz = () => {
     const localStorageData = [JSON.parse(localStorage.getItem('quiz'))];
-    setQuiz(localStorageData)
+    const concatData = localStorageData.concat(quizzes);
+    console.log('Concatenacion: ', concatData)
+    setQuiz(concatData);
   }
+
   // console.log(quiz)
 
   useEffect(() => {
@@ -240,9 +246,8 @@ useEffect(() => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/quizzes" element={<Quizzes quizzes={quizzes} quiz={quiz} />} />
-          <Route path="/quizGame/:id" element={<QuizGame quizzes={quizzes} dataScore={dataScore} totalScore={totalScore} />} />
-          <Route path="/quizGameLS/:id" element={<QuizGameLS quiz={quiz} />} />
+          <Route path="/quizzes" element={<Quizzes quiz={quiz} />} />
+          <Route path="/quizGame/:id" element={<QuizGame quiz={quiz} dataScore={dataScore} totalScore={totalScore} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/create" element={<Create />} />

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import Crud from './Crud'
-import CrudLocalStorage from './CrudLocalStorage'
 import '../assets/css/quizzes.css'
 
-const Quizzes = ({ quizzes, quiz }) => {
+const Quizzes = ({ quiz }) => {
   
   return (
     <>
@@ -14,24 +13,24 @@ const Quizzes = ({ quizzes, quiz }) => {
       </Link>
     </div>
     <div className='wrapperBtns'>
-        {quizzes.map(quizzes => (
+        {quiz.map(quiz => (
           <Crud 
-          key={quizzes.id}
-          id={quizzes.id}
-          name={quizzes.title}
-          />
-        ))}
-    </div>
-
-    <div className='wrapperBtns'>
-        {quiz.map((quiz, index) => (
-          <CrudLocalStorage
-          key={index}
+          key={quiz.id}
           id={quiz.id}
           name={quiz.title}
           />
         ))}
     </div>
+
+    {/* <div className='wrapperBtns'>
+        {quiz.map((quiz) => (
+          <CrudLocalStorage
+          key={quiz.id}
+          id={quiz.id}
+          name={quiz.title}
+          />
+        ))}
+    </div> */}
     </>
   );
 };
