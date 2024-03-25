@@ -170,17 +170,15 @@ const App = () => {
   const [quiz, setQuiz] = useState();// This is the data from the create quiz, it must be sent to local storage
   const [totalScore, setTotalScore] = useState([0]);// Total Score, should to send to localSotage
   const [dataGame, setDataGame] = useState([0]);// Game data
-  const [dataLocalStorage, setDataLocalStorage] = useState((0))// Local storage data
+  const [dataLocalStorage, setDataLocalStorage] = useState([])// Local storage data
 
-  // console.log("dataLocalStorage:", dataLocalStorage);
-  // console.log("dataGame:", dataGame);
-  // console.log("totalScore:", totalScore);
+  console.log("dataLocalStorage:", dataLocalStorage);
+  console.log("dataGame:", dataGame);
+  console.log("totalScore:", totalScore);
 
   useEffect(() => {
-    console.log("New value of quiz:", quiz);
     setQuiz(quiz);
   }, [quiz, quizzes]);
-
 
 //Data form quiz Game
   const dataScore = (data) => {
@@ -191,48 +189,34 @@ const App = () => {
 
 /** Function that adds the data of the localStorage with that of the game perhaps to then store it in totalScore 
 /* and send the data to the localStorage to update */
+  const dataPlus = () => {
+    const lastDataGame = dataGame[dataGame.length - 1];
+    const lastDataLocalScore = dataLocalStorage[dataLocalStorage.length - 1];
+    const sum = [...totalScore, (lastDataGame + lastDataLocalScore)];
+    console.log('lastDataGame ',lastDataGame)
+    setTotalScore(sum);
+  };
 
-const dataPlus = () => {
-  const lastDataGame = dataGame[dataGame.length - 1];
-  const sum = lastDataGame + dataLocalStorage;
-  console.log('lastDataGame ',lastDataGame)
-  console.log('dataLocalStorage ', dataLocalStorage)
-  setTotalScore(sum);
-};
-
-useEffect(() => {
-  dataPlus()
-},[dataGame, dataLocalStorage])
-
-// sum([...totalScore]);
+  useEffect(() => {
+    dataPlus()
+  },[dataGame, dataLocalStorage])
 
 //Data from LocalStorage
   const getScore = () => {
-    const localStorageScore = localStorage.getItem('score');
-    if(localStorageScore) {
-      try {
-        const parsedScore = JSON.parse(localStorageScore)
-        setDataLocalStorage(parsedScore)
-      } catch (error) {
-        console.log('Error parsing JASON', error)
-      }
-    } else {
-      console.log('No data into localStorage')
-    }
+    const localStorageScore = JSON.parse(localStorage.getItem('score'));
+    setDataLocalStorage([...dataLocalStorage, localStorageScore]);
   }
 
   useEffect(() => {
     getScore();
-  }, []);
+  },[]);
   
+//Concatenation quizzes
   const getQuiz = () => {
     const localStorageData = [JSON.parse(localStorage.getItem('quiz'))];
     const concatData = localStorageData.concat(quizzes);
-    console.log('Concatenacion: ', concatData)
     setQuiz(concatData);
   }
-
-  // console.log(quiz)
 
   useEffect(() => {
     getQuiz();

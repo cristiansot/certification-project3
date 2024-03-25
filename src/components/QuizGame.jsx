@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import '../assets/css/quizGame.css'
 
 const QuizGame = ({ dataScore, quiz, totalScore }) => {
+
+  const lastDataTotalScore = totalScore[totalScore.length - 1];
 
   // console.log('Total Score: ' + totalScore)
   const [score, setScore] = useState(0);
@@ -11,7 +14,7 @@ const QuizGame = ({ dataScore, quiz, totalScore }) => {
   const [gameIsOver, setGameIsOver] = useState(false);
 
   useEffect(() => {
-    dataScore(score);
+    dataScore(score)
     // console.log(dataScore)
   }, [score]);
 
@@ -21,7 +24,7 @@ const QuizGame = ({ dataScore, quiz, totalScore }) => {
   const findQuiz = quiz.find((e) => e.id === id);
   // console.log(findQuiz)
 
-  const { questions } = findQuiz;
+  const { questions } = findQuiz
   // console.log(questions);
 
   function HandlerAnswer(isCorrect, e) {
@@ -39,14 +42,11 @@ const QuizGame = ({ dataScore, quiz, totalScore }) => {
   }
 
   const handleSubmit = () => {
-    window.location.href = `/quizGame/${id}`;
-    // const lastData = totalScore[totalScore.length - 1];
-    localStorage.setItem('score', JSON.stringify(totalScore))
+    localStorage.setItem('score', JSON.stringify(lastDataTotalScore))
   }
 
   const handleComeBack = () => {
-    window.location.href = window.location.href = "/quizzes";
-    localStorage.setItem('score', JSON.stringify(totalScore))
+    localStorage.setItem('score', JSON.stringify(lastDataTotalScore))
   }
 
   if(gameIsOver)
@@ -55,12 +55,15 @@ const QuizGame = ({ dataScore, quiz, totalScore }) => {
         <h1 className="score">
           You got {score} points
         </h1>
-        <button onClick={handleSubmit}>
-          Play Again
-        </button>
-        <button onClick={handleComeBack}>
-          Go to Quizzes
-        </button>
+
+        <Link to={`/quizGame/${id}`}>
+          <button onClick={handleSubmit} className='createBtn'>Play Again</button>
+        </Link>
+        
+        <Link to={"/quizzes"}>
+          <button onClick={handleComeBack} className='createBtn'>go to quizzes</button>
+        </Link>
+
       </div>
     );
 
