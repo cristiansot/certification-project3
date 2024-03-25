@@ -43,8 +43,8 @@ const QuizGame = ({ quizzes, dataScore, totalScore }) => {
 
   const handleSubmit = () => {
     window.location.href = `/quizGame/${id}`;
-    const lastData = totalScore[totalScore.length - 1];
-    localStorage.setItem('score', JSON.stringify(lastData))
+    // const lastData = totalScore[totalScore.length - 1];
+    localStorage.setItem('score', JSON.stringify(totalScore))
   }
 
   if(gameIsOver)
