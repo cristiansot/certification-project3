@@ -168,13 +168,13 @@ const quizzes = [
 const App = () => {
 
   const [quiz, setQuiz] = useState();// This is the data from the create quiz, it must be sent to local storage
-  const [totalScore, setTotalScore] = useState([0]);// Total Score, should to send to localSotage
-  const [dataGame, setDataGame] = useState([0]);// Game data
+  const [totalScore, setTotalScore] = useState([]);// Total Score, should to send to localSotage
+  const [dataGame, setDataGame] = useState([]);// Game data
   const [dataLocalStorage, setDataLocalStorage] = useState([])// Local storage data
 
   console.log("dataLocalStorage:", dataLocalStorage);
-  console.log("dataGame:", dataGame);
-  console.log("totalScore:", totalScore);
+  // console.log("dataGame:", dataGame);
+  // console.log("totalScore:", totalScore);
 
   useEffect(() => {
     setQuiz(quiz);
@@ -193,7 +193,7 @@ const App = () => {
     const lastDataGame = dataGame[dataGame.length - 1];
     const lastDataLocalScore = dataLocalStorage[dataLocalStorage.length - 1];
     const sum = [...totalScore, (lastDataGame + lastDataLocalScore)];
-    console.log('lastDataGame ',lastDataGame)
+    // console.log('lastDataGame ',lastDataGame)
     setTotalScore(sum);
   };
 
@@ -202,8 +202,10 @@ const App = () => {
   },[dataGame, dataLocalStorage])
 
 //Data from LocalStorage
+
   const getScore = () => {
     const localStorageScore = JSON.parse(localStorage.getItem('score'));
+    console.log(localStorageScore);
     setDataLocalStorage([...dataLocalStorage, localStorageScore]);
   }
 
@@ -215,6 +217,7 @@ const App = () => {
   const getQuiz = () => {
     const localStorageData = [JSON.parse(localStorage.getItem('quiz'))];
     const concatData = localStorageData.concat(quizzes);
+    //I need to make a copy
     setQuiz(concatData);
   }
 

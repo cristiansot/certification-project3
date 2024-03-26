@@ -19,7 +19,7 @@ const Create = () => {
 
   const send = (values, { resetForm }) => {
     console.log(values);
-    localStorage.setItem('quiz', JSON.stringify(values))
+    localStorage.setItem(`${values.title}`, JSON.stringify(values))
     resetForm();
   };
 

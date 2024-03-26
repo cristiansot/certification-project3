@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 import '../assets/css/quizGame.css'
 
 const QuizGame = ({ dataScore, quiz, totalScore }) => {
@@ -43,6 +44,9 @@ const QuizGame = ({ dataScore, quiz, totalScore }) => {
 
   const handleSubmit = () => {
     localStorage.setItem('score', JSON.stringify(lastDataTotalScore))
+    useEffect(() => {
+      dataLocalStorage
+    },[])
   }
 
   const handleComeBack = () => {

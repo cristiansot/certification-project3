@@ -1,6 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { v4 as uuidv4 } from 'uuid';
 import '../assets/css/form.css';
 
 const schema = Yup.object({
@@ -23,7 +24,7 @@ const FormQuestions = ({ getData }) => {
 
   const { handleSubmit, handleChange, errors, values, setFieldValue } = useFormik({
     initialValues: {
-      id: '', // uuidv4 must be added
+      id: uuidv4(),
       question: '',
       options: [
         { textAnswer: '', isCorrect: false },
