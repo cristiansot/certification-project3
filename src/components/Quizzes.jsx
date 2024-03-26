@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Crud from './Crud'
 import '../assets/css/quizzes.css'
 
-const Quizzes = ({ quiz }) => {
+const Quizzes = ({ quizzes }) => {
   
   return (
     <>
@@ -14,11 +14,11 @@ const Quizzes = ({ quiz }) => {
       </div>
 
       <div className='wrapperBtns'>
-          {quiz.map(quiz => (
+          {quiz.map(quizzes => (
             <Crud 
-            key={quiz.id}
-            id={quiz.id}
-            name={quiz.title}
+            key={quizzes.id}
+            id={quizzes.id}
+            name={quizzes.title}
             />
           ))}
       </div>
